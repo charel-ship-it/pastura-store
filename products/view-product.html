@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pastura | Product Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/products/products-style.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
+<script src="/firebase-init.js"></script> <!-- تأكد أن هذا الملف يحتوي على config الخاص بك -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+<link rel="stylesheet" href="/products/zoomable-image-style.css">
+
+
+
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+}
+    .product-page-container {
+      max-width: 1000px;
+      margin: 1.5rem auto;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+    
+}
+    
+      .breadcrumb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+    }
+
+    .product-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+      color: #4b2c2c;
+    }
+
+    .product-image-gallery {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      margin-bottom: 1rem;
+    }
+
+    .product-image-gallery img {
+      width: 160px;
+      height: auto;
+      max-height: 220px;
+      object-fit: contain;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      background-color: #fff;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+
+    .product-price {
+      font-size: 1.5rem;
+      color: #007b57;
+      font-weight: bold;
+      margin: 1rem 0;
+    }
+
+    .tab-container {
+      margin-top: 2rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .tab-buttons {
+      display: flex;
+      gap: 1rem;
+      padding: 0.5rem;
+      background-color: #f1f1f1;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 10px;
+      background-color: #eee;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .tab-btn.active {
+      background-color: #694040;
+      color: white;
+    }
+
+    .tab-content {
+      padding: 1rem;
+      background-color: #fff;
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    #description, #specs {
+      min-height: 100px;
+    }
+
+    .variant-select {
+      margin: 1rem 0;
+    }
+
+    .variant-select select {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .product-actions button {
+      background-color: #694040;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .product-actions button:hover {
+      background-color: #8a5c5c;
+    }
+
+    @media (max-width: 600px) {
+      .product-title {
+        font-size: 1.4rem;
+        text-align: center;
+      }
+
+      .product-image-gallery {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .tab-buttons {
+        flex-direction: column;
+      }
+
+      .tab-btn {
+        width: 100%;
+      }
+
+      .product-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="product-page-container">
+    <div class="breadcrumb">
+     <a id="back-to-products-btn" class="back-button" 
+   style="display: inline-block; font-weight: bold; color: #694040; font-size: 1.2rem; text-decoration: underline; margin-bottom: 1rem;">
+  ← Back to Products
+</a>
+
+
+           <a href="cart.html" style="font-weight: bold; color: #694040; font-size: 1.2rem;  margin-left: 10rem;  margin-right: 5rem; margin-bottom: 1rem;">
+        USA cart
+      </a>
+    </div>
+
+    <h1 class="product-title" id="product-title">Loading...</h1>
+    <div class="product-image-gallery" id="product-gallery"></div>
+    <div id="full-image-container" class="product-full-image"></div>
+    <div class="product-price" id="product-price"></div>
+
+    <div class="tab-container">
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-tab="description">Description</button>
+        <button class="tab-btn" data-tab="specs">Specifications</button>
+      </div>
+      <div class="tab-content">
+        <div id="description" class="tab-panel active"></div>
+        <div id="specs" class="tab-panel"></div>
+      </div>
+    </div>
+
+    <div class="variant-select" id="variant-container"></div>
+
+    <div class="product-actions">
+      <button id="add-to-cart-btn">Add to Cart</button>
+      <button id="buy-now-btn" class="buy-now-btn">Buy Now</button>
+
+
+    </div>
+  </div>
+  <script>
+  document.getElementById("buy-now-btn").addEventListener("click", function () {
+    // تحقق مما إذا كان Firebase قد تم تحميله
+    if (firebase && firebase.auth) {
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // ✅ المستخدم مسجل الدخول
+          // يمكنك هنا تنفيذ عملية الشراء أو الانتقال إلى صفحة الدفع مثلاً:
+          window.location.href = "/products/cart.html"; // أو صفحة checkout المستقبلية
+        } else {
+          // ❌ المستخدم غير مسجل
+          // أعد توجيهه إلى صفحة تسجيل الدخول
+          window.location.href = "/auth.html";
+        }
+      });
+    } else {
+      console.error("Firebase Auth not initialized.");
+      window.location.href = "/auth.html"; // احتياطاً
+    }
+  });
+</script>
+
+
+  <!-- بيانات المنتج -->
+  <script src="/products/products-data.js"></script>
+  <!-- منطق عرض التفاصيل -->
+  <script src="/products/view-product-script.js"></script>
+</body>
+</html>

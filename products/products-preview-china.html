@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chinese Products | Pastura</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="/farmline-style.css" />
+  <link rel="stylesheet" href="/products/products-style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" href="/images/favicon.ico" />
+
+  <!-- Firebase Init -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
+  <script src="/firebase-init.js"></script>
+
+  <!-- Shopify SDK & Data -->
+  <script src="https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js"></script>
+  <script src="/products/products-data.js"></script>
+</head>
+
+<body class="product-page">
+  <nav class="main-nav">
+    <a href="/index.html" class="logo">Pastura</a>
+    <ul class="nav-links">
+      <li><a href="/products/products-usa.html">USA Section</a></li>
+      
+    </ul>
+  </nav>
+
+  <div id="category-nav" class="category-nav"></div>
+
+  <main>
+    <section class="product-section">
+      <h1>Farm Supplies from China</h1>
+      <div id="products-container" class="products-grid"></div>
+      <div id="pagination-controls" class="pagination-controls" style="text-align:center; margin-top:20px;"></div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <p>&copy; 2025 Pastura Farm Store. All rights reserved.</p>
+  </footer>
+
+  <!-- ✅ السكربت الديناميكي الوحيد المصرّح به -->
+  <script src="/products/products-preview-china-dynamic.js"></script>
+</body>
+</html>

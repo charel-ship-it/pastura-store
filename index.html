@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pastura | Modern Farm Tools, Equipment & Supplies</title>
+  <meta name="description" content="Explore Pastura’s wide selection of tools, equipment, and marketable farm products designed for modern agricultural operations." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <!-- التصميم العام للموقع -->
+  <link rel="stylesheet" href="farmline-style.css" />
+  
+  <!-- التصميم الخاص بالصفحة الرئيسية فقط -->
+  <link rel="stylesheet" href="home-navbar.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+
+<body class="home-page">
+
+<!-- Navbar -->
+
+<nav class="main-nav">
+  <div class="nav-container">
+    <!-- Left Side -->
+    <div class="nav-left">
+      <a href="/index.html">
+        <img src="/images/farmline-logo.png" alt="Farmline Logo" style="height: 34px;">
+      </a>
+      <a href="/about.html" class="nav-button">What is Pastura?</a>
+    </div>
+
+<div class="nav-right">
+  <div class="nav-links">
+<ul>
+  <!-- ✅ زر Products ضمن القائمة -->
+  <li class="dropdown">
+    <button class="dropdown-toggle">Products</button>
+    <ul class="dropdown-menu">
+      <li><a href="/products/products-usa.html">🌿 Local & U.S. Products</a></li>
+     <li>
+  <a class="china-link" href="#">🇨🇳 Chinese Imports</a>
+</li>
+
+    </ul>
+  </li>
+
+  <!-- ✅ زر Policies -->
+  <li class="dropdown">
+    <button class="dropdown-toggle">Policies</button>
+    <ul class="dropdown-menu">
+      <li><a href="/return-policy.html">Return Policy</a></li>
+      <li><a href="/shipping-policy.html">Shipping Policy</a></li>
+      <li><a href="/terms-of-use.html">Terms of Use</a></li>
+      <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+    </ul>
+  </li>
+
+  <!-- ✅ Contact -->
+  <li><a href="/contact.html">Contact Us</a></li>
+
+  <!-- ✅ Sign In / Sign Up داخل <li> -->
+  <li>
+    <a id="auth-link" href="/auth.html">Sign In / Sign Up</a>
+  </li>
+</ul>
+
+
+    
+
+    <div id="user-section" style="display: none; gap: 0.5rem; align-items: center;">
+      <span id="welcome-message"></span>
+      <button id="signout-btn">Sign Out</button>
+    </div>
+  </div>
+</div>
+
+
+</nav>
+
+
+
+
+<!-- Notices -->
+<div class="notice-banner">
+  <strong>⚠️ This is a test version of Pastura.</strong><br><br>
+  Our product catalog and systems are still under development.<br>
+  <strong>Please do not place any orders at this time.</strong><br>
+  Checkout is currently disabled. Thank you for your understanding.
+</div>
+
+
+
+
+
+<!-- Hero Section -->
+<section class="hero-container">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>
+        <span class="line">Welcome to Pastura</span>
+        <span class="line">Farm Store 🌿</span>
+      </h1>
+      <p>
+        <span class="line">Your trusted partner – Tools for Modern</span>
+        <span class="line">Agri-Livestock Operations.</span>
+      </p>
+
+      <!-- زر للابتوب -->
+     <div class="desktop-cta">
+   <div class="dropdown">
+    <button class="cta-button dropdown-toggle">Shop Now</button>
+    <ul class="dropdown-menu">
+      <li><a href="/products/products-usa.html">🌿 Local & U.S. Products</a></li>
+          <li>
+  <a class="china-link" href="#">🇨🇳 Chinese Imports</a>
+</li>
+    </ul>
+  </div>
+</div>
+
+
+      <!-- زر للهاتف فقط -->
+      <div class="mobile-cta">
+       <div class="dropdown">
+    <button class="cta-button dropdown-toggle">Shop Now</button>
+    <ul class="dropdown-menu">
+      <li><a href="/products/products-usa.html">🌿 Local & U.S. Products</a></li>
+       <li>
+  <a class="china-link" href="#">🇨🇳 Chinese Imports</a>
+</li>
+    </ul>
+  </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<div id="about-pastura-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 9999;">
+  <div style="background-color: #fff; padding: 20px; max-width: 600px; margin: 10% auto; border-radius: 8px; position: relative;">
+    <span id="close-pastura-modal" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 20px;">&times;</span>
+   <h2 style="margin-top: 0;">🌿 What is Pastura?</h2>
+<p><strong>Pastura</strong> is a modern digital platform dedicated to providing essential tools and equipment for farmers and agricultural enthusiasts. The platform simplifies access to high-quality, practical farming supplies, empowering both small-scale and professional agricultural operations through seamless online shopping.</p>
+
+<ul>
+  <li><strong>Industry Focus:</strong> Tools for poultry, gardening, irrigation, and sustainable farming.</li>
+  <li><strong>Audience:</strong> Hobbyists, small farms, livestock keepers, and home growers.</li>
+  <li><strong>Features:</strong> Secure Shopify shopping, Firebase authentication, mobile optimization.</li>
+</ul>
+
+<p style="font-style: italic;">“Pastura is your go-to online hub for modern farming and gardening supplies — empowering your farm with smart, practical tools that get the job done.”</p>
+
+  </div>
+</div>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
+<script src="firebase-init.js"></script>
+
+<!-- Auth UI Logic -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const userSection     = document.getElementById("user-section");
+    const welcomeMessage  = document.getElementById("welcome-message");
+    const authLink        = document.getElementById("auth-link");
+    const signoutButton   = document.getElementById("signout-btn");
+
+    firebase.auth().onAuthStateChanged(user => {
+      window.customerLoggedIn = !!user;
+      if (user) {
+        userSection.style.display = "flex";
+        welcomeMessage.textContent = `👋 Welcome, ${user.displayName || user.email}`;
+        authLink.style.display = "none";
+      } else {
+        userSection.style.display = "none";
+        authLink.style.display = "inline";
+      }
+    });
+
+    signoutButton.addEventListener("click", () => {
+      firebase.auth().signOut().then(() => {
+        const message = document.createElement("div");
+        message.textContent = "✅ Signed out successfully!";
+        Object.assign(message.style, {
+          position: "fixed",
+          top: "10px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          backgroundColor: "#4CAF50",
+          color: "#fff",
+          padding: "10px 20px",
+          borderRadius: "6px",
+          boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
+          zIndex: "1000",
+        });
+        document.body.appendChild(message);
+        setTimeout(() => {
+          message.remove();
+          window.location.href = "auth.html";
+        }, 2000);
+      });
+    });
+
+    // Optional: protect internal links
+    document.querySelectorAll(".protected-link").forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const target = link.getAttribute("data-target");
+        firebase.auth().onAuthStateChanged(user => {
+          if (user) {
+            window.location.href = target;
+          } else {
+            window.location.href = "auth.html";
+          }
+        });
+      });
+    });
+  });
+</script>
+<script>
+  const aboutBtn = document.getElementById("about-pastura-btn");
+  const modal = document.getElementById("about-pastura-modal");
+  const closeModal = document.getElementById("close-pastura-modal");
+if (aboutBtn) {
+  aboutBtn.addEventListener("click", () => {
+    modal.style.display = "block";
+  });
+}
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const dropdowns = document.querySelectorAll(".dropdown");
+
+  dropdowns.forEach(dropdown => {
+    const button = dropdown.querySelector(".dropdown-toggle");
+
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // أغلق جميع القوائم الأخرى أولاً
+      dropdowns.forEach(d => {
+        if (d !== dropdown) d.classList.remove("open");
+      });
+
+      // افتح أو أغلق القائمة الحالية
+      dropdown.classList.toggle("open");
+    });
+  });
+
+  // أغلق القوائم عند الضغط خارجها
+  document.addEventListener("click", (e) => {
+    dropdowns.forEach(dropdown => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove("open");
+      }
+    });
+  });
+});
+
+</script>
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const chinaLinks = document.querySelectorAll(".china-link");
+
+  firebase.auth().onAuthStateChanged((user) => {
+    chinaLinks.forEach(link => {
+      if (user) {
+        link.setAttribute("href", "/products/products-china.html");
+      } else {
+        link.setAttribute("href", "/products/products-preview-china.html");
+      }
+    });
+  });
+});
+
+</script>
+
+
+</body>
+</html>

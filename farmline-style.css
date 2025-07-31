@@ -1,0 +1,611 @@
+/* ==========================================
+   Global Reset & Base Styles
+   ========================================== */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  background: url('images/wood-bg3.jpg') no-repeat center top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ==========================================
+   Hero Section Styles
+   ========================================== */
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 4%;
+  height: 50vh;
+  min-height: 400px;
+  width: 90%;
+  max-width: 1200px;
+  padding: 2rem;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* النص الكامل كما في الديسكتوب (سطر واحد) */
+.hero-text h1,
+.hero-text p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.hero-text h1 .line,
+.hero-text p .line {
+  display: inline;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #444;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+/* زر CTA مشترك */
+.cta-button {
+  display: inline-block;
+  background-color: rgba(145, 54, 54, 0.7);
+  color: #d8ab17;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #772e2e;
+}
+
+/* إظهار/إخفاء الزر حسب الجهاز */
+.desktop-cta {
+  display: block;
+}
+.mobile-cta {
+  display: none;
+}
+
+/* تحسين العرض للهاتف */
+@media screen and (max-width: 768px) {
+  .hero-container {
+    margin-left: 0;
+  
+    width: 100%;
+    height: auto;
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-text h1 {
+    margin-right: 3rem;
+    font-size: 1.8rem;
+    line-height: 1.4;
+  }
+
+  .hero-text p {
+    margin-right: 3rem;
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .hero-text h1 .line,
+  .hero-text p .line {
+    display: block;
+    margin: 0.3rem 0;
+  }
+
+  .desktop-cta {
+    display: none;
+  }
+
+  .mobile-cta {
+    margin-right: 2.5rem;
+    display: block;
+    text-align: center;
+  }
+}
+
+
+
+/* ==========================================
+   Typography
+   ========================================== */
+h1, h2 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 1.5rem 0 1rem;
+  font-size: 2.5rem;
+}
+p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   Buttons & Links
+   ========================================== */
+
+.btn-sign-out {
+  background-color: rgba(255, 255, 255, 0.15); /* شفافية حقيقية */
+  color: #eee9e9;
+  border: 2px solid rgba(20, 9, 9, 0.4);
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px); /* تأثير زجاجي */
+  z-index: 2;
+  position: relative;
+}
+.btn-sign-out:hover {
+  background-color: rgba(10, 5, 5, 0.3);
+  color: #90ee90;
+  border-color: #90ee90;
+}
+
+/* ==========================================
+   Utility Container
+   ========================================== */
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+
+/* ==========================================
+   Icon Styles
+   ========================================== */
+.fa-shopping-cart {
+  color: rgb(224, 210, 210);
+  font-size: 20px;
+}
+
+/* ==========================================
+   Main Navbar
+   ========================================== */
+  /* ==========================================
+   Main Navbar – Global Style
+   ========================================== */
+.main-nav {
+  background-color: rgba(105, 64, 64, 0.7);
+  padding: 0.75rem 1rem;
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+nav.main-nav a {
+  font-weight: bold !important;
+  text-decoration: none;
+}
+
+.main-nav .logo {
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.main-nav .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  margin: 16px;
+  padding: 0;
+}
+
+.main-nav .nav-links a {
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.main-nav .nav-links a:hover {
+  color: #ffce8a;
+}
+
+
+
+/* ==========================================
+   Navigation Links (Shared)
+   ========================================== */
+
+#user-section {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1.5rem;
+  white-space: nowrap;
+}
+@media screen and (max-width: 768px) {
+  .nav-links {
+    overflow-x: auto;
+     width: 100%;
+  }
+}
+
+
+/* =========================================
+ under construction style
+ ==========================================*/
+.under-construction {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  height: 11vh;        /* أو ما يناسب تصميمك */
+  text-align: center;
+  
+}
+
+.under-construction h1 {
+  font-size: 7rem;
+  margin-bottom: 0rem;
+}
+
+.under-construction p {
+  font-size: 3rem;
+  color: #faf7f7;
+}
+
+
+/* ==========================================
+   Contact Page Styles (page-specific)
+   ========================================== */
+.contact-section {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.info-box, .form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-box h2,
+.form-box h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #185a39;
+  margin-bottom: 1rem;
+}
+
+.info-box p {
+  text-align: center;
+  font-size: 1rem;
+  color: #313131;
+}
+
+.info-box a {
+  color: #10744a;
+  text-decoration: none;
+}
+
+.info-box a:hover {
+  text-decoration: underline;
+}
+
+.form-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-box input,
+.form-box textarea {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-box textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-box button {
+  padding: 0.75rem;
+  background-color: #28a745;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-box button:hover {
+  background-color: #218838;
+}
+
+#form-status {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.auth-container {
+  max-width: 450px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.auth-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-box h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.auth-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-box input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.auth-box button[type="submit"] {
+  padding: 0.75rem;
+  background-color: #28a745;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-box button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.divider {
+  text-align: center;
+  color: #888;
+  margin: 1rem 0;
+}
+
+.switch-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.switch-btn:hover {
+  color: #0056b3;
+}
+.custom-navbar {
+  background-color: #108d3a;
+  color: white;
+}
+
+.custom-navbar .nav-brand {
+  color: #f0f3ed;
+}
+
+.custom-navbar .nav-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #90ee90;
+}
+
+#shop-now {  
+background-color: rgba(204, 190, 190, 0.15); /* شفافية حقيقية */
+  color: #ece4e4;
+  border: 2px solid rgba(20, 9, 9, 0.4);
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px); /* تأثير زجاجي */
+  z-index: 2;
+  position: relative;
+}
+.notice-banner {
+  background-color: #7e7676;
+  color: #aa131b9f;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #ebccd1;
+  position: relative;
+  z-index: 1;
+  line-height: 1.6;
+}
+
+/* شاشة بعرض 600px أو أقل */
+@media (max-width: 600px) {
+  .notice-banner {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+}
+.se.send-pastura-btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background-color: #6b2f2f;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s;
+}
+
+.send-pastura-btn:hover {
+  background-color: #8c3d3d;
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+  .send-pastura-btn {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+}
+.checkout-whatsapp-btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background-color: #25d366; /* WhatsApp Green */
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+.checkout-whatsapp-btn:hover {
+  background-color: #1ebe5d;
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+  .checkout-whatsapp-btn {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+}
+.cart-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.cart-buttons button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #6b3e3e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-buttons button:hover {
+  background-color: #543232;
+}
+.main-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  text-align: center;
+
+  color: #241f1f;
+  font-size: 0.95rem;
+  
+}
+.nav-links li a[href="/contact.html"] {
+  background-color: #694040;
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links li a[href="/contact.html"]:hover {
+  background-color: #8a5c5c;
+  color: #fff;
+}
+#welcome-message {
+  color: #1fa36c;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-right: 10px;
+}
+/* اخفِ القوائم افتراضياً */
+.dropdown .dropdown-menu {
+  display: none;
+}
+
+/* عند وجود class 'open' على القائمة، تظهر */
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+.dropdown-menu li a[href="/products/products-usa.html"],
+.dropdown-menu li a.china-link {
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+ 
+
+
+ 
+

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pastura | Sign In / Sign Up</title>
+  <link rel="stylesheet" href="../farmline-style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
+  <script src="/firebase-init.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .form-container input {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .password-wrapper {
+      position: relative;
+    }
+    .password-wrapper input {
+      padding-right: 0.90rem;
+    }
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 0.75rem;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #888;
+    }
+    .toggle-password:hover {
+      color: #694040;
+    }
+    .form-container button {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #694040;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .form-container button:hover {
+      background-color: #5a3535;
+    }
+    .form-container .message {
+      text-align: center;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    nav.main-nav {
+      background-color: rgba(105, 64, 64, 0.8);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav.main-nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      margin-right: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <a href="/index.html" class="logo">Home</a>
+    <div>
+      <a href="#" class="protected-link" data-target="/products/product.html">Products</a>
+      <a href="/contact.html" class="logo">Contact</a>
+    </div>
+  </nav>
+
+  <div class="form-container">
+    <div id="form-signin">
+         <h2 style="color: green;">Please Sign In to view product</h2>
+      <h2>Sign In</h2>
+      <form id="signin-form">
+        <input type="email" id="signin-email" placeholder="Email" required>
+        <div class="password-wrapper">
+          <input type="password" id="signin-password" placeholder="Password" required>
+          <span class="toggle-password"><i class="fa-solid fa-eye"></i></span>
+        </div>
+        <button type="submit">Sign In</button>
+      </form>
+      <p>Don't have an account? <a href="#" id="show-signup">Create Account</a></p>
+      <div id="signin-message" class="message"></div>
+    </div>
+
+    <div id="form-signup" style="display: none;">
+      <h2>Create Account</h2>
+      <form id="signup-form">
+        <input type="text" id="signup-firstname" placeholder="First Name" required>
+        <input type="text" id="signup-lastname" placeholder="Last Name" required>
+        <input type="email" id="signup-email" placeholder="Email" required>
+        <div class="password-wrapper">
+          <input type="password" id="signup-password" placeholder="Password" required>
+          <span class="toggle-password"><i class="fa-solid fa-eye"></i></span>
+        </div>
+        <div class="password-wrapper">
+          <input type="password" id="signup-confirm" placeholder="Confirm Password" required>
+          <span class="toggle-password"><i class="fa-solid fa-eye"></i></span>
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+      <p>Already have an account? <a href="#" id="show-signin">Sign In</a></p>
+      <div id="signup-message" class="message"></div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".toggle-password").forEach(toggle => {
+        toggle.addEventListener("click", () => {
+          const input = toggle.previousElementSibling;
+          const icon = toggle.querySelector("i");
+          if (!input || !icon) return;
+          const isVisible = input.type === "text";
+          input.type = isVisible ? "password" : "text";
+          icon.classList.toggle("fa-eye", isVisible);
+          icon.classList.toggle("fa-eye-slash", !isVisible);
+        });
+      });
+
+      const signinForm = document.getElementById("signin-form");
+      const signupForm = document.getElementById("signup-form");
+      const showSignin = document.getElementById("show-signin");
+      const showSignup = document.getElementById("show-signup");
+      const formSignin = document.getElementById("form-signin");
+      const formSignup = document.getElementById("form-signup");
+      const signinMessage = document.getElementById("signin-message");
+      const signupMessage = document.getElementById("signup-message");
+
+      showSignup.addEventListener("click", e => {
+        e.preventDefault();
+        formSignin.style.display = "none";
+        formSignup.style.display = "block";
+        signinMessage.textContent = "";
+      });
+
+      showSignin.addEventListener("click", e => {
+        e.preventDefault();
+        formSignup.style.display = "none";
+        formSignin.style.display = "block";
+        signupMessage.textContent = "";
+      });
+
+      signupForm.addEventListener("submit", e => {
+        e.preventDefault();
+        const firstName = document.getElementById("signup-firstname").value.trim();
+        const lastName  = document.getElementById("signup-lastname").value.trim();
+        const email     = document.getElementById("signup-email").value.trim();
+        const password  = document.getElementById("signup-password").value;
+        if (!firstName || !lastName || !email || !password) {
+          signupMessage.textContent = "Please fill in all fields.";
+          return;
+        }
+        const fullName = `${firstName} ${lastName}`;
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+          .then(cred => cred.user.updateProfile({ displayName: fullName }))
+          .then(() => {
+            signupMessage.style.color = "green";
+            signupMessage.textContent = "Account created successfully!";
+            signupForm.reset();
+          })
+          .catch(err => {
+            signupMessage.style.color = "red";
+            signupMessage.textContent = err.message;
+          });
+      });
+
+    signinForm.addEventListener("submit", e => {
+  e.preventDefault();
+  const email    = document.getElementById("signin-email").value.trim();
+  const password = document.getElementById("signin-password").value;
+
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => {
+      signinMessage.style.color = "green";
+      signinMessage.textContent = "Signed in successfully! Redirecting...";
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 1500);
+    })
+    .catch(err => {
+      signinMessage.style.color = "red";
+      signinMessage.textContent = err.message;
+    });
+});
+
+
+    firebase.auth().onAuthStateChanged(user => {
+  const userSection = document.getElementById("user-section");
+  const welcomeMessage = document.getElementById("welcome-message");
+  const authLink = document.getElementById("auth-link");
+
+  if (user) {
+    // ✅ المستخدم سجّل الدخول بنجاح
+    const name = user.displayName || user.email;
+    if (userSection && welcomeMessage && authLink) {
+      userSection.style.display = "flex";
+      welcomeMessage.textContent = `👋 Welcome, ${name}`;
+      authLink.style.display = "none";
+    }
+
+    // ✅ إعادة التوجيه إذا كان هناك رابط محفوظ
+    const redirectURL = localStorage.getItem("redirectAfterLogin");
+    if (redirectURL) {
+      localStorage.removeItem("redirectAfterLogin");
+      window.location.href = redirectURL;
+    }
+
+  } else {
+    // ❌ المستخدم غير مسجّل الدخول
+    if (userSection && authLink) {
+      userSection.style.display = "none";
+      authLink.style.display = "inline";
+    }
+  }
+});
+
+
+      const signoutButton = document.getElementById("signout-btn");
+      if (signoutButton) {
+        signoutButton.addEventListener("click", () => {
+          firebase.auth().signOut().then(() => {
+           
+            window.location.href = "auth.html";
+          });
+        });
+      }
+
+      const protectedLinks = document.querySelectorAll(".protected-link");
+      protectedLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetPage = link.getAttribute("data-target");
+          firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+              window.location.href = targetPage;
+            } else {
+              window.location.href = "auth.html";
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

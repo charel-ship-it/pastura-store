@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You | Farmline Supply</title>
+  <link rel="stylesheet" href="products/farmline-style.css" />
+  <meta name="google" content="notranslate" />
+  <style>
+    body {
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f3f4f6;
+      color: #333;
+      padding: 4rem 1rem;
+    }
+    .thank-you {
+      background: white;
+      padding: 2rem;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #4CAF50;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background-color: #388e3c;
+    }
+    .order-number, .customer-name, .order-time {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<div class="thank-you">
+  <h1>🎉 Thank You for Your Purchase!</h1>
+  <p class="customer-name" id="customer-name"></p>
+  <p class="order-number" id="order-id"></p>
+  <p class="order-time" id="order-time"></p>
+  <p>We truly appreciate your trust in Farmline Supply. 🌿</p>
+  <p>Our team will contact you shortly to confirm your shipping details.</p>
+
+  <a href="index.html" class="btn">← Back to Home</a><br><br>
+  <a href="https://wa.me/9613509378" target="_blank" class="btn">📱 Contact Us on WhatsApp</a><br><br>
+  <a href="receipt.html" target="_blank" class="btn">📄 View Receipt</a>
+</div>
+
+<script>
+  const orderId = localStorage.getItem("order_id") || "N/A";
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  
+  const now = new Date();
+  const formattedDate = now.toLocaleDateString() + ' ' + now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+  document.getElementById("order-id").innerText = "🆔 Order ID: " + orderId;
+  document.getElementById("order-time").innerText = `📅 Order Date: ${formattedDate}`;
+
+  if (currentUser && currentUser.name) {
+    document.getElementById("customer-name").innerText = `👤 Customer: ${currentUser.name}`;
+  } else {
+    document.getElementById("customer-name").style.display = "none";
+  }
+
+  // Clear the cart after thank you page
+  localStorage.removeItem("cart");
+</script>
+
+</body>
+</html>

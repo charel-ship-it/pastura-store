@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <link rel="stylesheet" href="../farmline-style.css" />
+  <link rel="stylesheet" href="/products/products-style.css" />
+    <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
+<script src="/firebase-init.js"></script> <!-- تأكد أن هذا الملف يحتوي على config الخاص بك -->
+  <title>Pastura | Checkout</title>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+ <style>
+  .container {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button {
+    padding: 0.8rem 1.2rem;
+    background: #007b57;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .summary {
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    background: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+
+  .summary h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .summary p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+  }
+
+  .breadcrumb a {
+    display: inline-block;
+    margin: 1rem auto;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    background-color: #007b57;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      padding: 1.5rem;
+      margin: 1rem;
+    }
+
+    .summary {
+      padding: 1rem;
+    }
+
+    .breadcrumb a {
+      display: block;
+      width: fit-content;
+      margin: 1rem auto;
+    }
+  }
+</style>
+
+</head>
+<body>
+   <div class="product-page-container">
+    <div class="breadcrumb">
+      <a href="cart.html" style="padding: 0.8rem 1.2rem; background: #007b57; color: white;
+      border: none; border-radius: 5px; font-size: 1rem; cursor: pointer; margin-top: 10px;">
+        back to cart
+      </a>
+
+    </div>
+  <div class="container">
+    <h2>Checkout</h2>
+    <input type="text" id="customer-name" placeholder="Full Name" required />
+    <input type="email" id="customer-email" placeholder="Email Address" required />
+    <input type="tel" id="customer-phone" placeholder="Phone Number" required />
+    <textarea id="shipping-address" placeholder="Shipping Address" required></textarea>
+    <div class="summary" id="order-summary"></div>
+    <button id="place-order-btn">Place Order</button>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+const productEncoded = params.get("product");
+
+if (productEncoded) {
+  try {
+    const product = JSON.parse(decodeURIComponent(productEncoded));
+    // استخدم البيانات هنا لعرض المنتج في الصفحة
+  } catch (err) {
+    console.error("❌ Failed to parse product:", err);
+  }
+}
+
+    emailjs.init("yfcydriqWExPvqjXe");
+
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+    function generateOrderId() {
+      return 'ORD-' + Date.now();
+    }
+
+    function generateOrderSummaryHTML(items) {
+      return items.map((item, index) => {
+        return (index + 1) + ". " + item.title + " x " + (item.quantity || 1) + " = $" +
+          ((item.quantity || 1) * parseFloat(item.price)).toFixed(2);
+      }).join("\n");
+    }
+
+    function renderOrderSummary() {
+      let subtotal = 0;
+      let html = "<h3>Order Summary</h3><ul>";
+      cart.forEach(item => {
+        const qty = item.quantity || 1;
+        const total = qty * parseFloat(item.price);
+        subtotal += total;
+        html += "<li>" + item.title + " x " + qty + " = $" + total.toFixed(2) + "</li>";
+      });
+      html += "</ul><p><strong>Subtotal:</strong> $" + subtotal.toFixed(2) + "</p>";
+      html += "<p><strong>Shipping:</strong> $5.00</p>";
+      html += "<p><strong>Total:</strong> $" + (subtotal + 5).toFixed(2) + "</p>";
+      document.getElementById("order-summary").innerHTML = html;
+    }
+
+    renderOrderSummary();
+
+    document.getElementById("place-order-btn").onclick = () => {
+      const name = document.getElementById("customer-name").value.trim();
+      const email = document.getElementById("customer-email").value.trim();
+      const phone = document.getElementById("customer-phone").value.trim();
+      const address = document.getElementById("shipping-address").value.trim();
+
+      if (!name || !email || !phone || !address) {
+        alert("❗ Please fill in all fields.");
+        return;
+      }
+
+      const orderId = generateOrderId();
+      const subtotal = cart.reduce((sum, item) => sum + (parseFloat(item.price || 0) * (item.quantity || 1)), 0);
+      const shipping = 5;
+      const total = subtotal + shipping;
+
+      const templateParams = {
+        customer_name: name,
+        customer_email: email,
+        customer_phone: phone,
+        shipping_address: address,
+        order_id: orderId,
+        order_total: total.toFixed(2),
+        order_summary: generateOrderSummaryHTML(cart)
+      };
+
+      emailjs.send("service_jadioi", "template_9qzvhpe", templateParams)
+        .then(function(response) {
+          alert("✅ Order placed and email sent!");
+          localStorage.removeItem("cart");
+          window.location.href = "/products/success.html?orderId=" + orderId;
+        }, function(error) {
+          console.error("❌ Failed to send invoice email:", error);
+          alert("❌ Order failed. Try again.");
+        });
+    };
+  </script>
+</body>
+</html>

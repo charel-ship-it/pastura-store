@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <link rel="stylesheet" href="../farmline-style.css" />
+  <link rel="stylesheet" href="/products/products-style.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
+<script src="/firebase-init.js"></script> <!-- تأكد أن هذا الملف يحتوي على config الخاص بك -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+
+  <title>Pastura | Cart</title>
+  <style>
+  body {
+    font-family: sans-serif;
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+
+  .cart-container {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+@media (max-width: 600px) {
+  .cart-container {
+  margin-right: 10px;
+   max-width: 300px;
+ } 
+}
+  .product {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1rem;
+  }
+
+  .product img {
+    max-width: 120px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .product-info {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .product-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .product-price {
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .summary {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .summary strong {
+    display: inline-block;
+    width: 120px;
+  }
+
+  .qty-btn {
+    padding: 3px 10px;
+    margin: 0 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: #ccc;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .qty-btn:hover {
+    background: #999;
+  }
+
+  button {
+    margin: 1rem 0.5rem 0 0;
+    padding: 0.8rem 1.5rem;
+    background: #007b57;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  #clear-cart-btn {
+    background-color: #a94442;
+  }
+
+  .breadcrumb a {
+    display: inline-block;
+    margin: 1rem auto;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    background-color: #007b57;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 600px) {
+    body {
+      padding: 1rem;
+    }
+
+    .cart-container {
+      padding: 1.5rem;
+      margin: 1rem;
+    }
+
+    .product {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .product img {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    button {
+      width: 100%;
+      margin: 0.5rem 0;
+    }
+
+    .breadcrumb a {
+      display: block;
+      width: fit-content;
+      margin: 1rem auto;
+    }
+  }
+</style>
+
+</head>
+<body>
+   <div class="product-page-container">
+    <div class="breadcrumb">
+      <a href="../index.html" style="padding: 0.8rem 1.2rem; background: #007b57; color: white;
+      border: none; border-radius: 5px; font-size: 1rem; cursor: pointer; margin-top: 20px;">
+        back to homepage
+      </a>
+    </div>
+  <div class="cart-container">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <div id="cart-summary" class="summary"></div>
+    <div style="text-align: right; margin-top: 2rem;">
+      <button id="go-checkout-btn">Complete Your Order</button>
+      <button id="clear-cart-btn" style="background-color: #a94442;">Clear Cart</button>
+    </div>
+  </div>
+
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    const container = document.getElementById("cart-items");
+    const summary = document.getElementById("cart-summary");
+
+    function renderCart() {
+      container.innerHTML = "";
+      summary.innerHTML = "";
+      let subtotal = 0;
+
+      cart.forEach(function(item, index) {
+        const qty = item.quantity || 1;
+        const total = parseFloat(item.price) * qty;
+        subtotal += total;
+
+        const div = document.createElement("div");
+        div.className = "product";
+        div.innerHTML =
+          '<img src="' + item.image + '" alt="' + item.title + '" />' +
+          '<div class="product-info">' +
+            '<div class="product-title">' + item.title + '</div>' +
+            '<div class="product-price">Unit Price: $' + item.price + '</div>' +
+            '<div class="product-price">Quantity: ' +
+              '<button class="qty-btn" onclick="updateQuantity(' + index + ', -1)">−</button>' +
+              '<span id="qty-' + index + '">' + qty + '</span>' +
+              '<button class="qty-btn" onclick="updateQuantity(' + index + ', 1)">+</button>' +
+            '</div>' +
+            '<div class="product-price"><strong>Total: $' + total.toFixed(2) + '</strong></div>' +
+          '</div>';
+        container.appendChild(div);
+      });
+
+      const shipping = 5;
+      const total = subtotal + shipping;
+      summary.innerHTML =
+        '<div><strong>Subtotal:</strong> ' + subtotal.toFixed(2) + ' $</div>' +
+        '<div><strong>Shipping:</strong> ' + shipping.toFixed(2) + ' $</div>' +
+        '<div><strong>Total:</strong> ' + total.toFixed(2) + ' $</div>';
+    }
+
+    function updateQuantity(index, delta) {
+      cart[index].quantity = (cart[index].quantity || 1) + delta;
+      if (cart[index].quantity <= 0) cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    if (cart.length === 0) {
+      container.innerHTML = "<p class='empty'>Your cart is empty.</p>";
+    } else {
+      renderCart();
+    }
+
+    document.getElementById("go-checkout-btn").addEventListener("click", function() {
+      window.location.href = "/products/checkout.html";
+    });
+    document.getElementById("clear-cart-btn").addEventListener("click", function() {
+  if (confirm("Are you sure you want to clear the cart?")) {
+    localStorage.removeItem("cart");
+    location.reload();
+  }
+});
+
+  </script>
+  <script>
+  document.getElementById("go-checkout-btn").addEventListener("click", function () {
+    if (firebase && firebase.auth) {
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // ✅ المستخدم مسجل الدخول
+          window.location.href = "/checkout.html";
+        } else {
+          // ❌ المستخدم غير مسجل الدخول
+          window.location.href = "/auth.html";
+        }
+      });
+    } else {
+      console.error("Firebase Auth not initialized.");
+      window.location.href = "/auth.html"; // احتياطاً
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+/* view-product-style.css */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+/* ====== Specification Table Style ====== */
+#product-specs table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+#product-specs tr {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+#product-specs td {
+  padding: 10px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+#product-specs td:first-child {
+  font-weight: bold;
+  color: #5a2d2d;
+  width: 40%;
+  background-color: #f4f4f4;
+}
+
+@media (max-width: 600px) {
+  #product-specs td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #product-specs tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  #product-specs td:first-child {
+    background-color: #eee;
+    font-size: 1rem;
+  }
+
+  #product-specs td:last-child {
+    font-size: 0.95rem;
+  }
+}
+.specs-heading {
+  font-size: 1.4rem;
+  color: #4b2c2c;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 4px;
+}
+/* === Tabs Container === */
+.tab-container {
+  margin-top: 2rem;
+  background-color: #fefefe;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+/* === Tab Buttons === */
+.tab-buttons {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background-color: #f4f4f4;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #5a2d2d;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+.tab-btn:hover {
+  background-color: #eaeaea;
+}
+
+.tab-btn.active {
+  background-color: #ffffff;
+  border-bottom: 3px solid #694040;
+  color: #694040;
+}
+
+/* === Tab Content === */
+.tab-content {
+  padding: 1rem;
+}
+
+.tab-panel {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* === Responsive Tabs === */
+@media (max-width: 600px) {
+  .tab-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .tab-content {
+    padding: 0.75rem;
+  }
+}
+
+
+
+.product-container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.product-container img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.product-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  color: #d8ab17;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.variants {
+  margin-top: 1rem;
+}
+
+.variants label {
+  font-weight: bold;
+  margin-top: 1rem;
+  display: block;
+}
+
+.variants select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #555;
+}
+
+@media (max-width: 600px) {
+  .product-container {
+    padding: 1rem;
+  }
+
+  .product-title {
+    font-size: 1.4rem;
+  }
+
+  .product-price {
+    font-size: 1.3rem;
+  }
+}
+.product-specs table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-specs td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 0.95rem;
+}
+.tab-panel {
+  display: none;
+}
+.tab-panel.active {
+  display: block;
+}
+
+
+.tab-buttons {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.tab-btn.active {
+  background-color: #694040;
+  color: white;
+  border-color: #694040;
+}
+
+#description, #specs {
+  min-height: 80px;
+}
+

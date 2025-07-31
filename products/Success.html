@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation | Pastura</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .confirmation-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      text-align: center;
+    }
+    .confirmation-box h1 {
+      color: #007b57;
+      margin-bottom: 1rem;
+    }
+    .confirmation-box p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+    .confirmation-box .order-id {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #444;
+    }
+    .confirmation-box a {
+      display: inline-block;
+      margin-top: 2rem;
+      text-decoration: none;
+      background: #007b57;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="confirmation-box">
+    <h1>Thank you for your order!</h1>
+    <p>Your order has been received and is being processed.</p>
+    <div class="order-id" id="orderIdBox">Order ID: <span id="orderId">-</span></div>
+    <a href="/index.html">Back to Home</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const orderId = params.get("orderId");
+    if (orderId) {
+      document.getElementById("orderId").textContent = orderId;
+    } else {
+      document.getElementById("orderIdBox").style.display = 'none';
+    }
+  </script>
+</body>
+</html>

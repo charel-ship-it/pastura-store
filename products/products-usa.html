@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>American Products | Pastura</title>
+
+  <!-- ✅ CSS -->
+  <link rel="stylesheet" href="/farmline-style.css" />
+  <link rel="stylesheet" href="/products/products-style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- ✅ Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
+  <script src="/firebase-init.js"></script>
+
+  <!-- ✅ بيانات المنتجات -->
+  <script src="/products/products-data.js" defer></script>
+
+  <!-- ✅ سكربت عرض المنتجات الأميركية -->
+  <script src="/products/products-usa-dynamic.js?v=2.0" defer></script>
+   
+</head>
+<body class="product-page">
+  <nav class="main-nav">
+    <a href="/index.html" class="logo">Pastura</a>
+    <ul class="nav-links">
+      <li><a href="/products/products-china.html">China Section</a></li>
+    
+    </ul>
+  </nav>
+
+  <!-- ✅ شريط الفئات -->
+  <div id="category-nav" class="category-nav"></div>
+
+  <main>
+    <section class="product-section">
+      <h1>Farm Essentials from the USA</h1>
+
+      <!-- ✅ شبكة عرض المنتجات -->
+      <div id="products-container" class="products-grid"></div>
+      
+
+
+      <!-- ✅ ترقيم الصفحات -->
+      <div id="pagination-controls" class="pagination-controls" style="text-align:center; margin-top:20px;"></div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <p>&copy; 2025 Pastura Farm Store. All rights reserved.</p>
+  </footer>
+</body>
+</html>

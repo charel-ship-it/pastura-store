@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notify Me | Pastura</title>
+  <link rel="stylesheet" href="farmline-style.css" />
+  <style>
+    body.notify-page {
+      font-family: Arial, sans-serif;
+      margin: 2rem auto;
+      padding: 2rem;
+      max-width: 800px;
+      line-height: 1.6;
+      color: #6d0808;
+    }
+
+    nav.main-nav {
+      background-color: rgba(105, 64, 64, 0.85);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    nav.main-nav .logo {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .notify-box {
+      background-color: #fafafa;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .notify-box h1 {
+      color: #6d0808;
+      margin-bottom: 1rem;
+    }
+
+    .notify-box p {
+      margin-bottom: 1.5rem;
+    }
+
+    .notify-box form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .notify-box input[type="email"] {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .notify-box button {
+      padding: 0.8rem;
+      background-color: #6d0808;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .notify-box button:hover {
+      opacity: 0.95;
+    }
+
+    @media (max-width: 768px) {
+      body.notify-page {
+        padding: 1rem;
+        margin: 1rem auto;
+        font-size: 0.95rem;
+        width: 90%;
+        background-color: #fcfcfc;
+        border: 1px dashed #ccc;
+      }
+
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      nav.main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        width: 92%;
+        margin-right: 12rem;
+      }
+
+      nav.main-nav .logo {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="notify-page">
+  <header>
+    <nav class="main-nav">
+      <a href="/index.html" class="logo">Home</a>
+    </nav>
+  </header>
+
+  <div class="notify-box">
+    <h1>Want to be the first?</h1>
+    <p>Enter your email and we'll notify you as soon as Pastura launches!</p>
+    <form id="notify-form">
+      <input type="email" id="email-input" placeholder="Email address" required />
+      <button type="submit">Notify Me</button>
+    </form>
+    <p id="form-msg" style="margin-top: 1rem; color: green; display: none;">
+      Thanks! We'll be in touch soon.
+    </p>
+  </div>
+
+  <script>
+    document.getElementById('notify-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email-input').value;
+
+      console.log('Notify request email:', email);
+
+      document.getElementById('form-msg').style.display = 'block';
+      document.getElementById('email-input').value = '';
+    });
+  </script>
+</body>
+</html>

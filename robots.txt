@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.pasturafarmstore.com/sitemap.xml
+Sitemap: https://www.pasturafarmstore.net/sitemap.xml
+Sitemap: https://farmline-supply.netlify.app/sitemap.xml

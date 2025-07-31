@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Browse Categories | Pastura</title>
+  <link rel="stylesheet" href="/products/products-style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ✅ الشريط العلوي البسيط */
+    .top-nav {
+      background-color: #694040;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .top-nav .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .top-nav .nav-links a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .top-nav .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* ✅ محتوى الصفحة */
+    .categories-section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .categories-section h1 {
+      color: #694040;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .category-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .category-card:hover {
+      background-color: #694040;
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    @media screen and (max-width: 600px) {
+      .categories-section h1 {
+        font-size: 1.5rem;
+      }
+
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .top-nav .nav-links {
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ الشريط العلوي البسيط -->
+  <header class="top-nav">
+    <a href="/index.html" class="logo">Pastura</a>
+    <div class="nav-links">
+      <a href="/index.html">Home</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </header>
+
+  <section class="categories-section">
+    <h1>Select a Product Category</h1>
+    <div class="categories-grid">
+      <a href="product.html?category=Farming Tools" class="category-card">Farming Tools</a>
+      <a href="product.html?category=Irrigation Systems" class="category-card">Irrigation Systems</a>
+      <a href="product.html?category=Poultry Farming Supplies" class="category-card">Poultry Farming Supplies</a>
+      <a href="product.html?category=Livestock Farming Supplies" class="category-card">Livestock Farming Supplies</a>
+      <a href="product.html?category=Home Gardening%20%26%20DIY Kits" class="category-card">Home Gardening & DIY Kits</a>
+      <a href="product.html?category=Greenhouse Tools" class="category-card">Greenhouse Tools</a>
+      <a href="product.html?category=Smart%20%26%20Sustainable Farming" class="category-card">Smart & Sustainable Farming</a>
+      <a href="product.html?category=Maintenance%20%26%20Repair" class="category-card">Maintenance & Repair</a>
+      <a href="product.html?category=Starter Kits%20%26%20Bundles" class="category-card">Starter Kits & Bundles</a>
+      <a href="product.html?category=Incubators%20%26%20accessories" class="category-card">Incubators & accessories</a>
+      <a href="product.html?category=Storage%20%26%20Shelving" class="category-card">Storage & Shelving</a>
+      <a href="product.html?category=Composting%20%26%20Soil Care" class="category-card">Composting & Soil Care</a>
+      <a href="product.html?category=Weather Monitoring Tools" class="category-card">Weather Monitoring Tools</a>
+    </div>
+  </section>
+
+</body>
+</html>
