@@ -1,35 +1,53 @@
-# نظام التشغيل
-.DS_Store
-Thumbs.db
-
-# Node modules (في حال استخدمت أدوات بناء مستقبلًا)
+# 📁 Node.js (في حال استخدمت أدوات بناء لاحقًا)
 node_modules/
-dist/
-build/
-
-# ملفات التكوين المحلية
-.env
-*.local
-
-# Netlify
-.netlify/
-
-# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# VS Code
+# 🔧 VS Code Editor
 .vscode/
 
-# نظام Windows
-desktop.ini
+# 🌐 Netlify
+.netlify/
 
-# Backup
+# 🔥 Firebase
+.firebase/
+firebase-debug.log
+
+# 📂 macOS
+.DS_Store
+
+# 📂 Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 🔑 Sensitive Files
+.env
+.env.local
+.env.*.local
+*.env
+
+# 🧪 Testing/Build Artifacts
+coverage/
+dist/
+build/
+*.log
+
+# 🔄 Backup & Temp Files
 *.bak
 *.tmp
 *.swp
+*.swo
+~$*
 
-# مخلفات النظام
-*.log
-*.cache
+# 🚫 System & IDE-specific
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
+
+# 🧪 Deployment Output (optional)
+*.zip
+*.tar.gz
+*.tgz
