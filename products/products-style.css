@@ -127,54 +127,52 @@ body.product-page {
 
 /* === Extra Info (Price, Button) === */
 .product-extra {
-  margin-top: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  text-align: center;
-  padding: 1rem;
-  background-color: #fdfcfc;
-  border-top: 1px solid #d4cfcf;
-  border-radius: 0 0 10px 10px;
+  margin-top: 10px;
 }
 
 .custom-price {
-  font-size: 1.1rem;
+  display: block;
   font-weight: bold;
-  color: #6b3e3e;
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 8px;
 }
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 
 .view-product-button {
-  background-color: #208620;
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-  margin: 8px;
-  width: 40%;
-  font-size: 1rem;
-}
-
-.view-product-button:hover {
-  background-color: #8a5c5c;
+  background-color: #007b57;
+  color: white;
+  margin: 1rem;
+   font-size: 1.3rem;
+    padding: 8px 16px;
+ text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex: 1; /* لجعل الزرين يتمددان حسب المساحة */
+  text-align: center;
 }
 
 .buy-now-button {
   background-color: #007b57;
   color: white;
-  padding: 10px;
+  margin: 1rem;
+   font-size: 1.3rem;
+    padding: 8px 16px;
+ 
   border: none;
-  border-radius: 5px;
-  font-weight: bold;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s ease;
-  font-size: 1rem;
-}
-
-.buy-now-button:hover {
-  background-color: #059e6a;
+  white-space: nowrap;
+  flex: 1; /* لجعل الزرين يتمددان حسب المساحة */
+  text-align: center;
 }
 
 /* === Shopify Buy Button Adjustments === */
