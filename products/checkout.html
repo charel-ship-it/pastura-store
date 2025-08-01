@@ -31,85 +31,94 @@
       <div id="status-message" style="margin-top: 1rem; font-weight: bold;"></div>
     </div>
 
-    <script>
-      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+   <script>
+  const cart = JSON.parse(localStorage.getItem("pastura-cart") || "[]");
 
-      function generateOrderId() {
-        return 'ORD-' + Date.now();
-      }
+  function generateOrderId() {
+    return 'ORD-' + Date.now();
+  }
 
-      function generateOrderSummaryHTML(items) {
-        return items.map((item, index) => {
-          return (index + 1) + ". " + item.title + " x " + (item.quantity || 1) + " = $" +
-            ((item.quantity || 1) * parseFloat(item.price)).toFixed(2);
-        }).join("\n");
-      }
+  function generateOrderSummaryHTML(items) {
+    return items.map((item, index) => {
+      return (index + 1) + ". " + item.title + " x " + (item.quantity || 1) + " = $" +
+        ((item.quantity || 1) * parseFloat(item.price)).toFixed(2);
+    }).join("\n");
+  }
 
-      function renderOrderSummary() {
-        let subtotal = 0;
-        let html = "<h3>Order Summary</h3><ul>";
-        cart.forEach(item => {
-          const qty = item.quantity || 1;
-          const total = qty * parseFloat(item.price);
-          subtotal += total;
-          html += "<li>" + item.title + " x " + qty + " = $" + total.toFixed(2) + "</li>";
-        });
-        html += "</ul><p><strong>Subtotal:</strong> $" + subtotal.toFixed(2) + "</p>";
-        html += "<p><strong>Shipping:</strong> $5.00</p>";
-        html += "<p><strong>Total:</strong> $" + (subtotal + 5).toFixed(2) + "</p>";
-        document.getElementById("order-summary").innerHTML = html;
-      }
+  function renderOrderSummary() {
+    let subtotal = 0;
+    let html = "<h3>Order Summary</h3><ul>";
+    cart.forEach(item => {
+      const qty = item.quantity || 1;
+      const total = qty * parseFloat(item.price);
+      subtotal += total;
+      html += "<li>" + item.title + " x " + qty + " = $" + total.toFixed(2) + "</li>";
+    });
+    html += "</ul><p><strong>Subtotal:</strong> $" + subtotal.toFixed(2) + "</p>";
+    html += "<p><strong>Shipping:</strong> $5.00</p>";
+    html += "<p><strong>Total:</strong> $" + (subtotal + 5).toFixed(2) + "</p>";
+    document.getElementById("order-summary").innerHTML = html;
+  }
 
-      renderOrderSummary();
+  renderOrderSummary();
 
-      document.getElementById("place-order-btn").onclick = async () => {
-        const name = document.getElementById("customer-name").value.trim();
-        const email = document.getElementById("customer-email").value.trim();
-        const phone = document.getElementById("customer-phone").value.trim();
-        const address = document.getElementById("shipping-address").value.trim();
+  document.getElementById("place-order-btn").onclick = async () => {
+    const name = document.getElementById("customer-name").value.trim();
+    const email = document.getElementById("customer-email").value.trim();
+    const phone = document.getElementById("customer-phone").value.trim();
+    const address = document.getElementById("shipping-address").value.trim();
 
-        if (!name || !email || !phone || !address) {
-          alert("❗ Please fill in all fields.");
-          return;
+    if (!name || !email || !phone || !address) {
+      alert("❗ Please fill in all fields.");
+      return;
+    }
+
+    const orderId = generateOrderId();
+    const payload = {
+      orderId,
+      customerName: name,
+      customerEmail: email,
+      customerPhone: phone,
+      shippingAddress: address,
+      items: cart
+    };
+
+    try {
+      const res = await fetch("https://us-central1-farmline-supply.cloudfunctions.net/pasturaApi/cart-created", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-pastura-token": "p@stur@_api_2024!SecureKey"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await res.json();
+
+      if (result.status === "success") {
+        localStorage.removeItem("pastura-cart");
+
+        if (result.paymentUrl) {
+          // ✅ توجيه المستخدم إلى صفحة الدفع
+          window.location.href = result.paymentUrl;
+        } else {
+          // ✅ fallback: توجيه إلى success.html
+          document.getElementById("status-message").textContent = "✅ Order placed successfully!";
+          setTimeout(() => {
+            window.location.href = "/products/success.html?orderId=" + orderId;
+          }, 1500);
         }
 
-        const orderId = generateOrderId();
-        const payload = {
-          orderId,
-          customerName: name,
-          customerEmail: email,
-          customerPhone: phone,
-          shippingAddress: address,
-          items: cart
-        };
+      } else {
+        document.getElementById("status-message").textContent = "❌ Failed to place order: " + (result.error || "Unknown error.");
+      }
+    } catch (err) {
+      console.error("❌ Error submitting order:", err);
+      document.getElementById("status-message").textContent = "⚠️ A network error occurred. Please try again.";
+    }
+  };
+</script>
 
-        try {
-          const res = await fetch("https://us-central1-farmline-supply.cloudfunctions.net/pasturaApi/cart-created", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "x-pastura-token": "p@stur@_api_2024!SecureKey"
-            },
-            body: JSON.stringify(payload)
-          });
 
-          const result = await res.json();
-
-          if (result.status === "success") {
-            localStorage.removeItem("cart");
-            document.getElementById("status-message").textContent = "✅ Order placed successfully!";
-            // 🚧 ربط لاحقًا بـ result.paymentUrl (إذا أرجع السيرفر ذلك)
-            setTimeout(() => {
-              window.location.href = "/products/success.html?orderId=" + orderId;
-            }, 1500);
-          } else {
-            document.getElementById("status-message").textContent = "❌ Failed to place order.";
-          }
-        } catch (err) {
-          console.error("❌ Error submitting order:", err);
-          document.getElementById("status-message").textContent = "⚠️ An error occurred. Please try again.";
-        }
-      };
-    </script>
 </body>
 </html>

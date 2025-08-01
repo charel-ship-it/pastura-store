@@ -163,13 +163,13 @@
     <h2>Your Cart</h2>
     <div id="cart-items"></div>
     <div id="cart-summary" class="summary"></div>
-    <div style="text-align: right; margin-top: 2rem;">
-     <button id="send-order-btn">Complete Your Order</button>
+   <!-- ... [نفس الجزء العلوي من الصفحة كما أرسلته] ... -->
 
+    <div style="text-align: right; margin-top: 2rem;">
+      <button id="send-order-btn">Complete Your Order</button>
       <button id="clear-cart-btn" style="background-color: #a94442;">Clear Cart</button>
     </div>
   </div>
-
 
   <script>
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
@@ -224,97 +224,37 @@
       renderCart();
     }
 
-    document.getElementById("go-checkout-btn").addEventListener("click", function() {
-      window.location.href = "/products/checkout.html";
-    });
+    // ✅ زر إفراغ السلة
     document.getElementById("clear-cart-btn").addEventListener("click", function() {
-  if (confirm("Are you sure you want to clear the cart?")) {
-    localStorage.removeItem("cart");
-    location.reload();
-  }
-});
-
-  </script>
-  <script>
-  document.getElementById("go-checkout-btn").addEventListener("click", function () {
-    if (firebase && firebase.auth) {
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // ✅ المستخدم مسجل الدخول
-          window.location.href = "/checkout.html";
-        } else {
-          // ❌ المستخدم غير مسجل الدخول
-          window.location.href = "/auth.html";
-        }
-      });
-    } else {
-      console.error("Firebase Auth not initialized.");
-      window.location.href = "/auth.html"; // احتياطاً
-    }
-  });
-</script>
-<script>
-  document.getElementById("send-order-btn").addEventListener("click", async () => {
-    const name  = document.getElementById("customer-name").value.trim();
-    const email = document.getElementById("customer-email").value.trim();
-    const phone = document.getElementById("customer-phone").value.trim();
-    const address = document.getElementById("shipping-address").value.trim();
-
-    if (!name || !email || !phone || !address) {
-      alert("❗ Please fill all customer fields.");
-      return;
-    }
-
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    if (cart.length === 0) {
-      alert("❗ Your cart is empty.");
-      return;
-    }
-
-    const orderId = "ORD-" + Date.now();
-    const orderData = {
-      orderId,
-      customerName: name,
-      customerEmail: email,
-      customerPhone: phone,
-      shippingAddress: address,
-      items: cart.map(item => ({
-        name: item.title,
-        imageUrl: item.image,
-        productId: item.shopifyId || item.productId,
-        price: item.price,
-        quantity: item.quantity || 1
-      }))
-    };
-
-    try {
-      const response = await fetch("https://us-central1-farmline-supply.cloudfunctions.net/pasturaApi/cart-created", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-pastura-token": "p@stur@_api_2024!SecureKey" // من .env
-        },
-        body: JSON.stringify(orderData)
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        alert("✅ Order sent successfully!");
+      if (confirm("Are you sure you want to clear the cart?")) {
         localStorage.removeItem("cart");
-        window.location.href = "/products/success.html";
-      } else {
-        alert("❌ Failed to send order: " + result.error);
+        location.reload();
       }
+    });
 
-    } catch (error) {
-      console.error("❌ Error:", error);
-      alert("❌ Network error occurred.");
-    }
-  });
-</script>
+    // ✅ زر "Complete Your Order" ➜ تحقق من تسجيل الدخول ➜ الانتقال إلى checkout.html
+    document.getElementById("send-order-btn").addEventListener("click", function () {
+      if (firebase && firebase.auth) {
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            if (!cart || cart.length === 0) {
+              alert("❗ Your cart is empty.");
+              return;
+            }
 
+            localStorage.setItem("pastura-cart", JSON.stringify(cart));
+            window.location.href = "/products/checkout.html";
+          } else {
+            window.location.href = "/auth.html";
+          }
+        });
+      } else {
+        console.error("Firebase not initialized.");
+        window.location.href = "/auth.html";
+      }
+    });
+  </script>
 
 </body>
 </html>
+
