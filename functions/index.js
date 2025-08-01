@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 // ✅ Pastura Firebase Function Entry
 const functions = require("firebase-functions");
 const express = require("express");
@@ -92,6 +94,53 @@ app.post("/cart-created", async (req, res) => {
   } catch (err) {
     console.error("❌ Failed to send email:", err);
     res.status(500).json({ error: "Failed to send email" });
+  }
+});
+app.post("/process-2checkout", async (req, res) => {
+  const { customerInfo, orderItems, totalAmount, currency } = req.body;
+
+  if (!customerInfo || !orderItems || !totalAmount || !currency) {
+    return res.status(400).send("Missing required fields");
+  }
+
+  try {
+    const payload = {
+      currency,
+      amount: totalAmount,
+      billing: {
+        name: customerInfo.name,
+        email: customerInfo.email,
+        phone: customerInfo.phone,
+        address: customerInfo.address,
+      },
+      items: orderItems.map(item => ({
+        name: item.title,
+        price: item.price,
+        quantity: item.quantity || 1,
+      }))
+    };
+
+    // ⚠️ عدّل الرابط الفعلي حسب مستندات 2Checkout
+    const response = await require("axios").post(
+      "https://api.2checkout.com/orders",
+      payload,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${process.env.TWOCHECKOUT_SECRET_KEY}`,
+        }
+      }
+    );
+
+    res.status(200).json({
+      success: true,
+      checkoutUrl: response.data.checkoutUrl || null,
+      transactionId: response.data.transactionId || null,
+    });
+
+  } catch (error) {
+    console.error("❌ 2Checkout error:", error.message);
+    res.status(500).json({ success: false, message: "Payment failed", error: error.message });
   }
 });
 

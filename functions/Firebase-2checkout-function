@@ -1,0 +1,14 @@
+// Firebase function to handle 2Checkout integration will be written here.
+
+// This function will listen to webhook triggers or order submission events
+// and forward the data to 2Checkout for payment processing.
+
+// Coming next: set up HTTPS function endpoint + request handling
+
+// Structure will include:
+// - Receiving order payload
+// - Validating data
+// - Preparing 2Checkout API request
+// - Forwarding response back to Firebase system or frontend
+
+module.exports = {};

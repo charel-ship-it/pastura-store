@@ -116,25 +116,28 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Add to Cart
-  document.getElementById("add-to-cart-btn").onclick = () => {
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    const existingProduct = cart.find(item => item.title === product.title);
+ document.getElementById("add-to-cart-btn").onclick = () => {
+  const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+  const existingProduct = cart.find(item => item.title === product.title);
 
-    if (existingProduct) {
-      existingProduct.quantity += 1;
-    } else {
-      cart.push({
-        title: product.title,
-        price: product.price,
-        image: product.image,
-        currency: "USD",
-        quantity: 1
-      });
-    }
+  if (existingProduct) {
+    existingProduct.quantity += 1;
+  } else {
+    cart.push({
+      title: product.viewTitle || product.title,
+      price: product.price,
+      image: product.fullSizeImage || product.image,
+      shopifyId: product.shopifyId || null,
+      productId: product.productId || null,
+      currency: "USD",
+      quantity: 1
+    });
+  }
 
-    localStorage.setItem("cart", JSON.stringify(cart));
-    alert("✅ Added to cart!");
-  };
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("✅ Added to cart!");
+};
+
 
   // Buy Now
   document.getElementById("buy-now-btn").onclick = () => {
