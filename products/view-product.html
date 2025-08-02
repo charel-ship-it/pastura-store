@@ -197,21 +197,45 @@
        
       
     }
+ .top-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f6f2;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+  overflow-x: auto;
+  gap: 1rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #694040;
+  background-color: #e8e1dc;
+  padding: 0.6rem 1.1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0; /* ضروري على الهاتف لمنع الانكماش */
+}
+
+.nav-link:hover {
+  background-color: #d6c5bd;
+}
+
+
   </style>
 </head>
 <body>
   <div class="product-page-container">
-    <div class="breadcrumb">
-     <a id="back-to-products-btn" class="back-button" 
-   style="display: inline-block; font-weight: bold; color: #694040; font-size: 1.2rem; text-decoration: underline; margin-bottom: 1rem;">
-  ← Back to Products
-</a>
+ <div class="top-navigation">
+  <a id="back-to-products-btn" href="/products/products-usa.html" class="nav-link">← Back to Products</a>
+  <a href="/products/cart.html" class="nav-link">🛒 USA Cart</a>
+</div>
 
 
-           <a href="cart.html" style="font-weight: bold; color: #694040; font-size: 1.2rem;  margin-left: 10rem;  margin-right: 5rem; margin-bottom: 1rem;">
-        USA cart
-      </a>
-    </div>
 
     <h1 class="product-title" id="product-title">Loading...</h1>
     <div class="product-image-gallery" id="product-gallery"></div>
