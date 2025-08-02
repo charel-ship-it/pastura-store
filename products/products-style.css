@@ -137,11 +137,11 @@ body.product-page {
   color: #333;
   margin-bottom: 8px;
 }
-
 .button-row {
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* 🚫 ممنوع الالتفاف */
+  justify-content: space-between;
 }
 
 
@@ -151,6 +151,7 @@ body.product-page {
   margin: 1rem;
    font-size: 1.3rem;
     padding: 8px 16px;
+     
  text-decoration: none;
   border: none;
   border-radius: 4px;
@@ -166,7 +167,7 @@ body.product-page {
   margin: 1rem;
    font-size: 1.3rem;
     padding: 8px 16px;
- 
+
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -330,22 +331,6 @@ button.active {
     border: none !important;
   }
 
-  .product-extra {
-    margin-top: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 0.5rem !important;
-  }
-
-  .view-product-button {
-    width: 80% !important;
-    
-    max-width: 300px;
-    font-size: 1rem;
-    padding: 10px;
-    margin: 10px auto !important;
-  }
 
   iframe[name^="frame-product"] {
     max-width: 100% !important;

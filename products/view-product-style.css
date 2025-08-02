@@ -225,6 +225,18 @@ button:hover {
   .product-price {
     font-size: 1.3rem;
   }
+  
+button {
+  flex: 1;
+  padding: 12px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
 }
 .product-specs table {
   width: 100%;
@@ -267,5 +279,19 @@ button:hover {
 
 #description, #specs {
   min-height: 80px;
+}
+.product-actions {
+    background-color: #007b57;
+  color: white;
+  margin: 1rem;
+   font-size: 1.3rem;
+    padding: 8px 16px;
+
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex: 1; /* لجعل الزرين يتمددان حسب المساحة */
+  text-align: center;
 }
 
