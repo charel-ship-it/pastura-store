@@ -1,54 +1,5 @@
 
-const products = [
-{ label: "Application", value: "Art & Collectible", checkoutType: "pastura" },
-{ label: "Brand Name", value: "No", checkoutType: "pastura" },
-{ label: "Color", value: "Customized Color", checkoutType: "pastura" },
-{ label: "Delivery time", value: "40–45 Days", checkoutType: "pastura" },
-{ label: "Feature", value: "Artistic", checkoutType: "pastura" },
-{ label: "Logo", value: "Customized Logo", checkoutType: "pastura" },
-{ label: "MOQ", value: "200pcs", checkoutType: "pastura" },
-{ label: "Material", value: "Resin, Polyresin", checkoutType: "pastura" },
-{ label: "Model Number", value: "NO", checkoutType: "pastura" },
-{ label: "Packing", value: "PP bag + white box + outdoor box", checkoutType: "pastura" },
-{ label: "Pattern", value: "SCULPTURE", checkoutType: "pastura" },
-{ label: "Payment", value: "T/T, PayPal, Western Union", checkoutType: "pastura" },
-{ label: "Place of Origin", value: "Fujian, China", checkoutType: "shopify" },
-{ label: "Product Type", value: "Figurine", checkoutType: "pastura" },
-{ label: "Sample Time", value: "7–15 days", checkoutType: "pastura" },
-{ label: "Shape", value: "Irregular", checkoutType: "pastura" },
-{ label: "Size", value: "Customized Size", checkoutType: "pastura" },
-{ label: "Style", value: "Decoration", checkoutType: "pastura" },
-{ label: "Technique", value: "Hand-painted", checkoutType: "pastura" },
-{ label: "Usage", value: "Decoration", checkoutType: "pastura" },
-
-{
-  title: "Digital Circulated Air Incubators with Auto Egg Turner 2450",
-  description: "40W, Pro Incubator, Digital Display Shows Temperature, Humidity, & Days To Hatch, Incutek Heater Is Fast & Accurate, Heating To Factory Pre-Set Temperature Of 100 Degrees Fahrenheit Within Minutes, Days To Hatch Count Down, Set At 21 Days & Adjustable.",
-
-  shopifyId: "", // ليس ضرورياً حالياً
-  htmlId: "product-component-farm4250",
-  category: "Incubators & Accessories",
-  countryOfOrigin: "usa",
-  price: "00.00",
-  currency: "$",
- gallery: [
-  "https://mrosupreme.com/cdn/shop/files/5508866_akceyb.jpg?v=1717836998&width=800",
-  "https://m.media-amazon.com/images/I/71fR3qKVx+L._AC_SL1500_.jpg",
-  "https://m.media-amazon.com/images/S/aplus-media-library-service-media/06454ced-159e-4549-922c-d94f5f61ef1a.__CR0,4,3000,1856_PT0_SX970_V1___.jpg",
-  "https://m.media-amazon.com/images/S/aplus-media-library-service-media/61156469-3551-47dc-99b3-0fb400283e27.__CR0,7,3000,1856_PT0_SX970_V1___.jpg",
-  "https://m.media-amazon.com/images/S/aplus-media-library-service-media/71d5cbed-18af-4449-a46c-330752630275.__CR0,0,1086,1359_PT0_SX362_V1___.jpg",
-  "https://m.media-amazon.com/images/S/aplus-media-library-service-media/76ebdde7-82f0-41d9-9d0b-b5e9f89f102d.__CR0,0,1086,1359_PT0_SX362_V1___.jpg",
-  "https://m.media-amazon.com/images/S/aplus-media-library-service-media/5a873b97-a04d-4513-ab06-a23cdd126e08.__CR0,0,1086,1359_PT0_SX362_V1___.jpg"
-],
-image: "https://mrosupreme.com/cdn/shop/files/5508866_akceyb.jpg?v=1717836998&width=800",
-fullSizeImage: "",
-
-  viewTitle: "Farm Innovators Pro 4250 Digital Egg Incubator",
-  viewDescription: "This advanced incubator features a digital control center with automatic egg turning, designed to handle up to 41 chicken eggs. It provides precise temperature control (99.5°F to 100.5°F) and consistent airflow for optimal hatching conditions. Ideal for small farms and serious poultry enthusiasts.",
-  specifications: "• Model: Pro Series 4250; • Power: 40W; • Egg Capacity: 41 chicken eggs; • Temperature Range: 99.5°F–100.5°F; • Auto Egg Turner: Included; • Origin: USA", checkoutType: "pastura" },
-
- 
- 
+[
   {
     "title": "Outdoor Furniture 30 Plants Home Gardening",
     "description": "*OUTDOOR OR INDOOR GROWING: Whether you grow indoors or in a sunny spot in your backyard or balcony, you can offer soil-free options for indoor and outdoor gardening with our Tower Hydroponics System.  With this self-watering home hydroponics system,...",
@@ -57,7 +8,9 @@ fullSizeImage: "",
     "category": "Smart & Sustainable Farming",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "outdoor-furniture-30-plants-home-gardening-system-with-pump-and-movable-water-tank-vegetable-plant-gift-for-gardening-lover"
+    "shopifyTitle": "Outdoor Furniture 30 Plants Home Gardening System with Pump and Movable Water Tank Vegetable Plant Gift for Gardening Lover",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "90% Coffee‑Color Shade Cloth Sunshade Net",
@@ -67,7 +20,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "90-shade-cloth-1pc-90-shade-cloth-coffee-color-sunshade-net-suitable-for-garden-patio-plant-canopy-greenhouse-outdoor"
+    "shopifyTitle": "[90% Shade Cloth] 1pc 90% Shade Cloth Coffee Color Sunshade Net | Suitable For Garden Patio, Plant Canopy, Greenhouse, Outdoor",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Self‑Watering Elevated Planter Box",
@@ -77,7 +32,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "fcj-self-watering-elevated-planter-box-raised-garden-bed-for-patio-balcony-planter-for-flowers-vegetables-herbs-growth-of-plants"
+    "shopifyTitle": "FCJ Self-Watering Elevated Planter Box Raised Garden Bed for Patio Balcony Planter for Flowers Vegetables Herbs Growth of Plants",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "4‑Pack 12‑Cell Mini Indoor Propagation Greenhouses",
@@ -87,7 +44,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "4pcs-mini-greenhouse-12-compartments-indoor-greenhouse-propagation-greenhouse-nursery-box-with-air-vent"
+    "shopifyTitle": "4Pcs Mini Greenhouse 12 Compartments Indoor Greenhouse Propagation Greenhouse Nursery Box With Air Vent",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "8×8 ft Walk‑In Polycarbonate Greenhouse with Double Doors",
@@ -97,7 +56,9 @@ fullSizeImage: "",
     "category": "Greenhouse Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "8x8-ft-double-door-heavy-duty-walk-in-polycarbonate-greenhouse-aluminum-raised-base-anchor-all-season-garden-greenhouse-for"
+    "shopifyTitle": "8x8 FT Double Door Heavy Duty Walk-in Polycarbonate Greenhouse Aluminum Raised Base Anchor All Season Garden Greenhouse for",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "4‑Pack Automatic Poultry Waterer Cups",
@@ -107,7 +68,9 @@ fullSizeImage: "",
     "category": "Poultry Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "4pcs-poultry-kit-automatic-chicken-water-feeder-automatic-drinking-bowl-feeding-watering-supplie-chicken-waterer"
+    "shopifyTitle": "4PCS Poultry Kit Automatic Chicken Water Feeder Automatic Drinking Bowl Feeding Watering Supplie Chicken Waterer",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "4ft Galvanized Sheep Wire Mesh Fence Roll",
@@ -117,7 +80,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "4-height-galvanized-hinge-joint-weave-sheep-wire-mesh-livestock-farming-fence-fast-shipping-in-stock"
+    "shopifyTitle": "4' Height Galvanized Hinge Joint Weave Sheep Wire Mesh Livestock Farming Fence Fast Shipping in Stock",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "360° Rotating Garden Mobile Work Stool",
@@ -127,7 +92,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "360-degree-rotating-agricultural-chair-garden-farming-tools-greenhouse-lazy-bench-vegetable-and-fruit-picking-tools-work-bench"
+    "shopifyTitle": "360 Degree Rotating Agricultural Chair / Garden Farming Tools Greenhouse lazy bench vegetable and fruit picking tools work bench",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Large 47×18×18 Metal Rectangular Planter",
@@ -137,7 +104,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "47-18-18-inch-large-metal-rectangular-planter-with-shelves-and-drainage-holes-for-tall-plants-flowers"
+    "shopifyTitle": "47*18*18 inch Large Metal Rectangular Planter with Shelves and Drainage Holes for Tall Plants, Flowers",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "2‑Tier Foldable Wooden Cold Frame Greenhouse",
@@ -147,7 +116,9 @@ fullSizeImage: "",
     "category": "Greenhouse Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "2-tier-foldable-cold-frame-greenhouse-portable-wooden-greenhouse-garden-cold-frame-raised-planter-box-with-shelves"
+    "shopifyTitle": "2 Tier Foldable Cold Frame Greenhouse, Portable Wooden Greenhouse Garden Cold Frame Raised Planter Box with Shelves",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "23‑Gauge Galvanized Hardware Cloth Roll – 24×50 ft",
@@ -157,7 +128,9 @@ fullSizeImage: "",
     "category": "Maintenance & Repair",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "1-4x24inx50ft-hardware-cloth-23gauge-welded-galvanized-mesh-roll-for-hog-wire-fences-greenhouse-flooring-crawl-space-covers"
+    "shopifyTitle": "1/4x24inx50ft Hardware Cloth 23Gauge Welded Galvanized Mesh Roll for Hog Wire Fences Greenhouse Flooring Crawl Space Covers",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Clear PE Greenhouse Film Cover (3×4/3×6/3×10 m)",
@@ -167,7 +140,9 @@ fullSizeImage: "",
     "category": "Greenhouse Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "1-greenhouse-film-clear-polythene-plastic-sheeting-garden-diy-material-cover-for-greenhouse-roof-3-4m-3-6m-3-10m-for-gardeners"
+    "shopifyTitle": "1*Greenhouse Film Clear Polythene Plastic Sheeting Garden Diy Material Cover For Greenhouse Roof 3*4m/3*6m/3*10m For Gardeners",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "23‑Gauge Galvanized Hardware Cloth Roll – 48×100 ft",
@@ -177,7 +152,9 @@ fullSizeImage: "",
     "category": "Maintenance & Repair",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "1-4x48inx100ft-hardware-cloth-23gauge-welded-galvanized-mesh-roll-for-hog-wire-fences-greenhouse-flooring-crawl-space-covers"
+    "shopifyTitle": "1/4x48inx100ft Hardware Cloth 23Gauge Welded Galvanized Mesh Roll for Hog Wire Fences Greenhouse Flooring Crawl Space Covers",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Outdoor Furniture 30 Plants Home Gardening",
@@ -187,7 +164,9 @@ fullSizeImage: "",
     "category": "Smart & Sustainable Farming",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "outdoor-furniture-30-plants-home-gardening-system-with-pump-and-movable-water-tank-vegetable-plant-gift-for-gardening-lover"
+    "shopifyTitle": "Outdoor Furniture 30 Plants Home Gardening System with Pump and Movable Water Tank Vegetable Plant Gift for Gardening Lover",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Moonspry Green Wood Nutrient Liquid Fertilizer",
@@ -197,7 +176,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "moonspry-green-wood-nutrient-liquid-fertilizer-concentrated-solution-trace-elements-for-strong-rooting-seedlings-healthy-plants"
+    "shopifyTitle": "Moonspry Green Wood Nutrient Liquid Fertilizer Concentrated Solution Trace Elements for Strong Rooting Seedlings Healthy Plants",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Moonspry Concentrated Plant Food Spray for",
@@ -207,7 +188,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "moonspry-concentrated-plant-food-spray-for-growth-for-succulent-flower-green-lawn-leafy-green-plants"
+    "shopifyTitle": "Moonspry Concentrated Plant Food Spray for Growth for Succulent Flower Green Lawn Leafy Green Plants",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Black Metal Garden Arch Trellis 56.3×16.9×94.5\"",
@@ -217,7 +200,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "metal-garden-arch-l56-3-x-w16-93-x-h94-5-grapevine-climbing-plants-support-rose-arch-outdoor-black"
+    "shopifyTitle": "Metal Garden Arch L56.3'' X W16.93'' X H94.5'' Grapevine Climbing Plants Support Rose Arch Outdoor Black",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "2L Portable Manual Milking Machine Kit",
@@ -227,7 +212,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "manual-milking-machine-2000ml-effort-saving-control-stainless-steel-bottle-portable-milking-kit-for-milk-plant-farm"
+    "shopifyTitle": "Manual Milking Machine 2000ml Effort Saving Control Stainless Steel Bottle Portable Milking Kit for Milk Plant Farm",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "7ft Dark Brown Wooden Garden Arbor Arch",
@@ -237,7 +224,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "7ft-wedding-arch-backdrop-stand-for-ceremony-party-garden-pergola-with-trellis-for-climbing-plants-dark-brown"
+    "shopifyTitle": "7FT Wedding Arch Backdrop Stand for Ceremony Party, Garden Pergola with Trellis for Climbing Plants, Dark Brown",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "2-Pack Brown Iron Arch Garden Trellis 86.7×19.7\"",
@@ -247,7 +236,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "2-pack-rustproof-metal-garden-trellis-86-7x19-7-iron-trellis-for-climbing-plants-outdoor-flower-support-in-brown"
+    "shopifyTitle": "2 Pack Rustproof Metal Garden Trellis 86.7\"x19.7\" Iron Trellis for Climbing Plants Outdoor Flower Support in Brown",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "2-Pack Cream White Metal Garden Trellis",
@@ -257,7 +248,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "2-pack-metal-garden-trellis-71-x-19-7-rustproof-trellis-for-climbing-plants-outdoor-flower-support-cream-white"
+    "shopifyTitle": "2 Pack Metal Garden Trellis 71\" x 19.7\" Rustproof Trellis for Climbing Plants Outdoor Flower Support Cream White",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "1–3 Inch Polished River Rocks – 18 lb Decorative Stones",
@@ -267,7 +260,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "18lbs-decorative-garden-stone-outdoor-landscaping-walkways-yard-1-3-inch-large-polished-river-rocks-for-plants-pots-vases-crafts-2"
+    "shopifyTitle": "18lbs Decorative Garden Stone Outdoor Landscaping,Walkways,Yard,1-3 Inch Large Polished River Rocks for Plants Pots,Vases,Crafts",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "1–3 Inch Polished River Rocks – 18 lb Decorative Stones",
@@ -277,7 +272,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "18lbs-decorative-garden-stone-outdoor-landscaping-walkways-yard-1-3-inch-large-polished-river-rocks-for-plants-pots-vases-crafts-1"
+    "shopifyTitle": "18lbs Decorative Garden Stone Outdoor Landscaping,Walkways,Yard,1-3 Inch Large Polished River Rocks for Plants Pots,Vases,Crafts",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "1–3 Inch Polished River Rocks – 18 lb Decorative Stones",
@@ -287,7 +284,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "18lbs-decorative-garden-stone-outdoor-landscaping-walkways-yard-1-3-inch-large-polished-river-rocks-for-plants-pots-vases-crafts"
+    "shopifyTitle": "18lbs Decorative Garden Stone Outdoor Landscaping,Walkways,Yard,1-3 Inch Large Polished River Rocks for Plants Pots,Vases,Crafts",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "50 ml Food-Grade Milking Collector Cup",
@@ -297,7 +296,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "sheep-milking-collector-50ml-goat-sheep-milking-claw-milk-collector-cup-goat-milking-machine-part-goat-milking-machine-part"
+    "shopifyTitle": "Sheep Milking Collector 50ml Goat Sheep Milking Claw Milk Collector Cup Goat Milking Machine Part Goat Milking Machine Part",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Sheep Milking Machine Liner & Cup Accessory Set",
@@ -307,7 +308,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "milking-machine-sheep-lining-milking-machine-accessories-special-cup-set-for-milk-sheep-various-milking-machine-accessories"
+    "shopifyTitle": "Milking Machine Sheep Lining, Milking Machine Accessories, Special Cup Set For Milk Sheep, Various Milking Machine Accessories",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Silicone Milking Suction Heads & Liners",
@@ -317,7 +320,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "milk-lining-sheep-milking-part-suction-head-milking-machine-silicone-goat-milk-liner-manual-electric-breast-pump-accessories"
+    "shopifyTitle": "Milk Lining Sheep Milking Part Suction Head Milking Machine Silicone Goat Milk Liner Manual Electric Breast Pump Accessories",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Adjustable L80 Gas Pulsator for Milking Machines",
@@ -327,7 +332,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "l80-gas-pulsator-for-cow-milker-milking-machine-adjustable-speed-pulsation-rate-for-interpuls-parts-of-milking-machine-1"
+    "shopifyTitle": "L80 Gas Pulsator For Cow Milker Milking Machine Adjustable Speed Pulsation Rate For Interpuls Parts Of Milking Machine",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Adjustable L80 Gas Pulsator for Milking Machines",
@@ -337,7 +344,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "l80-gas-pulsator-for-cow-milker-milking-machine-adjustable-speed-pulsation-rate-for-interpuls-parts-of-milking-machine"
+    "shopifyTitle": "L80 Gas Pulsator For Cow Milker Milking Machine Adjustable Speed Pulsation Rate For Interpuls Parts Of Milking Machine",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "14-in-1 Stainless Steel Folding Multi-Tool",
@@ -347,7 +356,9 @@ fullSizeImage: "",
     "category": "Maintenance & Repair",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "hand-diy-multi-tools-multi-tool-folding-knives-scissor-cutters-edc-survival-gear-manual-pliers-fishing-outdoor-survival-camping"
+    "shopifyTitle": "Hand Diy Multi Tools Multi-tool Folding Knives Scissor Cutters EDC Survival Gear Manual Pliers Fishing Outdoor Survival Camping",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "HP102 Dual-Outlet Milking Machine Pulsator",
@@ -357,7 +368,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "hp102-milking-pulsator-cow-milking-machine-accessories-farming-equipment-with-two-outlet-farming-equipment-cow-milking-pulsator"
+    "shopifyTitle": "HP102 Milking Pulsator Cow Milking Machine Accessories Farming Equipment with Two-Outlet Farming Equipment Cow Milking Pulsator",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "5L Rechargeable Electric Pulsating Milking Machine",
@@ -367,7 +380,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "electric-milking-machine-goat-sheep-cow-milker-bucket-vacuum-pump-pulsating-milking-machine-automatic-electric-vacuum-pump"
+    "shopifyTitle": "Electric Milking Machine Goat Sheep Cow Milker Bucket Vacuum Pump Pulsating Milking Machine Automatic Electric Vacuum Pump",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Stainless Steel & Silicone Cow Milking Cluster Set",
@@ -377,7 +392,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "cow-milking-cluster-silicone-stainless-steel-rustproof-cup-set-for-vacuum-pump-milk-machine-milking-cup-set-milking-claw-cluster"
+    "shopifyTitle": "Cow Milking Cluster Silicone Stainless Steel Rustproof Cup Set for Vacuum Pump Milk Machine Milking Cup Set Milking Claw Cluster",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Classic Sheep & Goat Milking Cluster Assembly",
@@ -387,7 +404,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "classic-type-sheep-milking-clusters-for-goat-milking-machine"
+    "shopifyTitle": "Classic Type Sheep Milking Clusters for Goat Milking Machine",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "7L Electric Vacuum Pulse Milking Machine",
@@ -397,7 +416,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "7l-household-electric-goat-cow-milking-machine-with-vacuum-pulse-pump-goat-milking-machine-100-240v"
+    "shopifyTitle": "7L Household Electric Goat Cow Milking Machine with Vacuum Pulse Pump Goat Milking Machine 100-240V",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "5L Electric Goat & Cow Milking Machine",
@@ -407,7 +428,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "5l-household-electric-goat-cow-milking-machine-with-direct-suction-pump-electric-milking-machine"
+    "shopifyTitle": "5L Household Electric Goat Cow Milking Machine With Direct Suction Pump Electric Milking Machine",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "5L Stainless Steel Electric Milking Machine",
@@ -417,7 +440,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "5l-cow-goat-electric-milking-machine-stainless-steel-milker-electric-vacuum-pump-240v-automatic-efficient-milking-machine"
+    "shopifyTitle": "5L Cow Goat Electric Milking Machine Stainless Steel Milker Electric Vacuum Pump 240V Automatic Efficient Milking Machine",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "50 ml Food-Grade Milking Collector Cup",
@@ -427,7 +452,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "50ml-goat-sheep-milking-claw-milk-collector-cup-goat-milking-machine-part-goat-milking-machine-replacement-goat-milking-claw"
+    "shopifyTitle": "50ml Goat Sheep Milking Claw Milk Collector Cup Goat Milking Machine Part Goat Milking Machine Replacement Goat Milking Claw",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "2-Pack Portable Goat & Sheep Milking Claw Kit",
@@ -437,7 +464,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "2x-goat-sheep-milker-machine-parts-claw-kit-milking-teat-cups-manual-collector-portable-goat-milking-machine-part"
+    "shopifyTitle": "2X Goat Sheep Milker Machine Parts Claw Kit Milking Teat Cups Manual Collector Portable Goat Milking Machine Part",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "240 ml Plastic Milking Claw Collector",
@@ -447,7 +476,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "240ml-milking-claw-collector-milking-machine-accessory-livestock-supplies-for-sheep-goat-cow"
+    "shopifyTitle": "240ml Milking Claw Collector Milking Machine Accessory Livestock Supplies for Sheep Goat Cow",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Silicone Milking Liners for Cow & Sheep",
@@ -457,7 +488,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "1pair-milking-lining-cow-sheep-manual-electric-milking-machine-accessories-milking-suction-head-milking-machine-silicone-goat"
+    "shopifyTitle": "1Pair Milking Lining Cow Sheep Manual Electric Milking Machine Accessories Milking Suction Head Milking Machine Silicone Goat",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "12V Electric Vacuum Milking Pump for Cows & Sheep",
@@ -467,7 +500,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "12v-electric-milking-pump-pulsating-milking-pump-milking-machine-accessory-electric-and-pulse-host-vacuum-pump-for-cow-sheep"
+    "shopifyTitle": "12V Electric Milking Pump Pulsating milking pump Milking Machine Accessory Electric and Pulse Host Vacuum Pump for Cow Sheep",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Manganese Steel Garden Hoe for Weeding",
@@ -477,7 +512,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "small-hoe-for-digging-soil-manganese-steel-garden-hoe-household-outdoor-farming-tools-planting-vegetables-flowers-weed-removal"
+    "shopifyTitle": "Small Hoe for Digging Soil Manganese Steel Garden Hoe Household Outdoor Farming Tools Planting Vegetables Flowers Weed Removal",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Manganese Steel Small Garden Hoe for Soil Cultivation",
@@ -487,7 +524,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "small-hoe-for-digging-soil-garden-hoe-household-outdoor-farming-tools-for-planting-vegetables-and-flowers"
+    "shopifyTitle": "Small Hoe for Digging Soil Garden Hoe Household Outdoor Farming Tools for Planting Vegetables and Flowers",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Adjustable 5–8 Tine Ergonomic Garden Weeder",
@@ -497,7 +536,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "5-6-7-8-garden-hoe-weeding-tool-agricultural-farm-tools-menggang-rake-digging-wild-vegetables-weeding-loosening-soil"
+    "shopifyTitle": "5/6/7/8 Garden Hoe Weeding Tool Agricultural Farm Tools Menggang Rake Digging Wild Vegetables Weeding Loosening Soil",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Manganese Steel Triangle Furrow Hoe",
@@ -507,7 +548,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "farm-tools-furrow-hoe-triangle-plowing-hoe-agricultural-land-turning-loose-soil-hoe-hand-plow-manual-plough-rake-hoe-garden-tool"
+    "shopifyTitle": "Farm Tools Furrow Hoe Triangle Plowing Hoe Agricultural Land Turning Loose Soil Hoe Hand Plow/Manual Plough Rake Hoe Garden Tool",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Durable Manganese Steel Planting Hoe",
@@ -517,7 +560,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "durable-hoe-for-digging-soil-agricultural-hoe-household-outdoor-farming-tools-for-planting-vegetables-and-flowers"
+    "shopifyTitle": "Durable Hoe for Digging Soil Agricultural Hoe Household Outdoor Farming Tools for Planting Vegetables and Flowers",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Carbon Steel Small Garden Hoe for Soil Cultivation",
@@ -527,7 +572,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "small-hoe-for-digging-soil-garden-hoe-household-outdoor-farming-tools-for-planting-vegetables-and-flowers"
+    "shopifyTitle": "Small Hoe for Digging Soil Garden Hoe Household Outdoor Farming Tools for Planting Vegetables and Flowers",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Rolling Manual Cultivator & Soil Loosener",
@@ -537,7 +584,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "weeders-soil-loosening-tools-hand-gardening-tools-for-soil-loosening-and-heavy-duty-farm-weeders"
+    "shopifyTitle": "Weeders, soil loosening tools, hand gardening tools, for soil loosening and heavy-duty farm weeders",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Manganese Steel Survival Sapper Shovel Set",
@@ -547,7 +596,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "manganese-steel-sapper-shovel-cover-set-outdoor-self-defense-fishing-sapper-shovel-garden-camping-farming-tools-spade-survival"
+    "shopifyTitle": "Manganese Steel Sapper Shovel Cover Set Outdoor Self-defense Fishing Sapper Shovel Garden Camping Farming Tools Spade Survival",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Carbon Steel Small Garden Hoe for Weeding",
@@ -557,7 +608,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "garden-hoe-for-digging-soil-agricultural-hoe-forging-weeding-small-hoe-for-planting-vegetables-flowers-outdoor-farming-tools"
+    "shopifyTitle": "Garden Hoe for Digging Soil Agricultural Hoe Forging Weeding Small Hoe for Planting Vegetables Flowers Outdoor Farming Tools",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Labor-Saving Multi-Tooth Carbon Steel Garden Weeder",
@@ -567,7 +620,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "hardened-hollow-hoe-garden-hoe-weeders-labor-saving-weeding-loosening-farming-tools-planting-rake-hoe-garden-hand-tools"
+    "shopifyTitle": "Hardened Hollow Hoe Garden Hoe Weeders Labor-saving Weeding Loosening Farming Tools Planting Rake Hoe Garden Hand Tools",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "3-Piece Mini Metal & Wood Garden Tool Set",
@@ -577,7 +632,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "gardening-tools-three-piece-set-mini-garden-tools-multi-function-shovel-harrow-shovel-household-plant-pine-soil-shovel"
+    "shopifyTitle": "Gardening Tools Three-Piece Set Mini Garden Tools Multi-Function Shovel Harrow Shovel Household Plant Pine Soil Shovel",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "4-in-1 Ergonomic Garden Tool Set with Gloves",
@@ -587,7 +644,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "garden-tool-hand-trowel-rake-cultivator-weeder-tools-with-ergonomic-handle-garden-lawn-farmland-transplant-gardening-bonsai-tool"
+    "shopifyTitle": "Garden Tool Hand Trowel,Rake,Cultivator,Weeder Tools With Ergonomic Handle,Garden Lawn Farmland Transplant Gardening Bonsai Tool",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Four-Tooth Manganese Steel Soil Fork",
@@ -597,7 +656,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "agricultural-loose-soil-fork-fourtooth-manganese-steel-farming-tools-loosening-and-clearing-manual-garden-soil-turning-artifact"
+    "shopifyTitle": "Agricultural Loose Soil Fork Fourtooth Manganese steel farming tools loosening and clearing Manual Garden Soil Turning Artifact",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "5/10 ml Stainless Steel Continuous Injection Syringe",
@@ -607,7 +668,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "5ml-10ml-feeding-metal-continuous-syringe-vaccine-poultry-sow-sheep-pig-cattle-injection-animal-farming-tools"
+    "shopifyTitle": "5ml 10ml Feeding Metal Continuous Syringe Vaccine Poultry Sow Sheep Pig Cattle Injection Animal Farming Tools",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "2-in-1 Garden Aerator & Rotary Cultivator",
@@ -617,7 +680,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "2-in-1-farm-equipment-lawn-aerator-garden-soil-scarifier-gardening-rotary-tiller-cultivator-farming-tools-garden-lawn-ripper"
+    "shopifyTitle": "2 in 1 Farm Equipment lawn aerator Garden Soil Scarifier Gardening Rotary Tiller Cultivator Farming tools Garden Lawn Ripper",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Veterinary Stainless Steel Surgical Scissors (14 cm)",
@@ -627,7 +692,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "1pcs-professional-animal-veterinary-vet-stainless-steel-surgical-scissor-straight-curved-tip-farming-tools-suplies-pig-cow-sheep"
+    "shopifyTitle": "1PCS Professional Animal Veterinary Vet Stainless Steel Surgical Scissor Straight Curved Tip Farming Tools Suplies Pig Cow Sheep",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Durable Forged Manganese Steel Garden Hoe",
@@ -637,7 +704,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "durable-garden-hoe-household-outdoor-farming-tools-forging-weeding-hoe-for-digging-soil-planting-vegetables-flowers"
+    "shopifyTitle": "Durable Garden Hoe Household Outdoor Farming Tools Forging Weeding Hoe for Digging Soil Planting Vegetables Flowers",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Hand-Forged Curved Blade Gardening Hoe",
@@ -647,7 +716,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "farm-tools-hoes-triangle-furrow-hoe-household-agricultural-weeding-hoe-planting-vegetable-gardening-loosening-soil-weeding-tools"
+    "shopifyTitle": "Farm Tools Hoes Triangle Furrow Hoe Household Agricultural Weeding Hoe Planting Vegetable Gardening Loosening Soil Weeding Tools",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Portable Tomato Greenhouse Grow Tent",
@@ -657,7 +728,9 @@ fullSizeImage: "",
     "category": "Greenhouse Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "tomato-greenhouse-for-outdoor-small-grow-plant-house-tent-movable-vegetables-growth-cover-greenhouse-for-vegetables-tomato"
+    "shopifyTitle": "Tomato Greenhouse for Outdoor Small Grow Plant House Tent Movable Vegetables Growth Cover Greenhouse for Vegetables Tomato",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Mini Indoor Propagation Greenhouse Tray",
@@ -667,7 +740,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "mini-greenhouse-12-24-48-compartments-indoor-greenhouse-propagation-greenhouse-nursery-box-with-air-vent-for-hydroponics-growin"
+    "shopifyTitle": "Mini Greenhouse 12/24/48 Compartments Indoor Greenhouse Propagation Greenhouse Nursery Box With Air Vent  for Hydroponics Growin",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Home Assistant Green Privacy-Focused Automation Hub",
@@ -677,7 +752,9 @@ fullSizeImage: "",
     "category": "Smart & Sustainable Farming",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "home-assistant-green-the-easiest-and-most-privacy-focused-way-to-automate-your-home"
+    "shopifyTitle": "Home Assistant Green the easiest and most privacy-focused way to automate your home",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Solar-Powered Automatic Greenhouse Vent Opener",
@@ -687,7 +764,9 @@ fullSizeImage: "",
     "category": "Greenhouse Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "greenhouse-window-opener-vent-autovent-solar-heat-sensitive-automatic-greenhouses-roof-greenhouse-vent-autovent"
+    "shopifyTitle": "Greenhouse Window Opener Vent Autovent Solar Heat Sensitive Automatic Greenhouses Roof Greenhouse Vent Autovent",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "12-Cell Seed Starter Tray with Adjustable Vent",
@@ -697,7 +776,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "greenhouse-seed-starter-tray-seedling-box-with-adjustable-ventilator-cover-plant-germination-transplant-12-cell-tpe-nursery-pot"
+    "shopifyTitle": "Greenhouse Seed Starter Tray Seedling Box with Adjustable Ventilator Cover  Plant Germination Transplant 12-Cell TPE Nursery Pot",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Fiberglass Greenhouse Plant Hoop Set",
@@ -707,7 +788,9 @@ fullSizeImage: "",
     "category": "Greenhouse Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "greenhouse-plant-hoops-set-reusable-fibreglass-grow-set-seedling-arch-shed-bracket-vegetable-garden-grow-tunnel-support-hot-sale"
+    "shopifyTitle": "Greenhouse Plant Hoops Set Reusable Fibreglass Grow Set Seedling Arch Shed Bracket Vegetable Garden Grow Tunnel Support Hot Sale",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Fiberglass Garden Hoop Tunnel Kit",
@@ -717,7 +800,9 @@ fullSizeImage: "",
     "category": "Greenhouse Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "greenhouse-hoops-frame-tunnel-kit-garden-hoops-reusable-bendable-fibreglass-grow-set-garden-plant-tunnel"
+    "shopifyTitle": "Greenhouse Hoops Frame Tunnel Kit Garden Hoops Reusable Bendable Fibreglass Grow Set Garden Plant Tunnel",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Portable Walk-In Garden Greenhouse with Door",
@@ -727,7 +812,9 @@ fullSizeImage: "",
     "category": "Greenhouse Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "greenhouse-for-outdoors-portable-walk-in-greenhouse-plant-garden-green-house-winter-summer-large-garden-house-with-door"
+    "shopifyTitle": "Greenhouse for Outdoors Portable Walk in Greenhouse Plant Garden Green House Winter Summer Large Garden House with Door",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Clear PE Greenhouse Insulation Cover with Zipper Door",
@@ -737,7 +824,9 @@ fullSizeImage: "",
     "category": "Greenhouse Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "greenhouse-film-clear-polythene-plastic-sheeting-garden-diy-uv-resistant-waterproof-cover-for-greenhouse-roof-2mx6m-2mx10m"
+    "shopifyTitle": "Greenhouse Film Clear Polythene Plastic Sheeting Garden DIY UV-resistant Waterproof Cover For Greenhouse Roof 2Mx6M 2Mx10M",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Clear PE Greenhouse Film Cover",
@@ -747,7 +836,9 @@ fullSizeImage: "",
     "category": "Greenhouse Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "greenhouse-film-clear-polythene-plastic-sheeting-garden-diy-material-cover-for-greenhouse-roof-waterproof-uv-resistant"
+    "shopifyTitle": "Greenhouse Film Clear Polythene Plastic Sheeting Garden DIY Material Cover For Greenhouse Roof Waterproof UV-resistant",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "DIY 10–30M Micro Drip Irrigation Kit",
@@ -757,7 +848,9 @@ fullSizeImage: "",
     "category": "Irrigation Systems",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "greenhouse-10m-30m-diy-drip-irrigation-system-automatic-watering-garden-hose-micro-drip-watering-kits-with-adjustable-drippers"
+    "shopifyTitle": "Greenhouse 10M-30M DIY Drip Irrigation System Automatic Watering Garden Hose Micro Drip Watering Kits with Adjustable Drippers",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Green Plastic Vine Climbing Support Frame",
@@ -767,7 +860,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "green-plant-support-pile-frame-greenhouse-arrangement-semicircle-fixed-rod-indoor-flower-plants-vine-climbing-bracket-hock-pen"
+    "shopifyTitle": "Green Plant Support Pile Frame Greenhouse Arrangement Semicircle Fixed Rod Indoor Flower Plants Vine Climbing Bracket Hock Pen",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Green Leaf Privacy Fence Panels – Decorative Outdoor Screen",
@@ -777,7 +872,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "green-leaf-fence-panels-privacy-fence-screen-for-home-garden-yard-decoration-outdoor-wall-decor"
+    "shopifyTitle": "Green Leaf Fence Panels Privacy Fence Screen For Home Garden Yard Decoration Outdoor Wall Decor",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Thermal Insulation PE Greenhouse Cover with Zippered Door",
@@ -787,7 +884,9 @@ fullSizeImage: "",
     "category": "Greenhouse Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "environmentally-greenhouse-cover-thermal-insulation-cover-greenhouse-pe-cover-replacement-with-thermal-insulation-rainproof-door"
+    "shopifyTitle": "Environmentally Greenhouse Cover Thermal Insulation Cover Greenhouse Pe Cover Replacement with Thermal Insulation Rainproof Door",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Green Inflatable Two-Room Family Camping Tent",
@@ -797,7 +896,9 @@ fullSizeImage: "",
     "category": "Greenhouse Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "green-color-outdoor-camping-iatable-house-tent-with-two-rooms-design"
+    "shopifyTitle": "Green Color Outdoor Camping Iatable House Tent With Two Rooms Design",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Pop-Up Walk-In Greenhouse with Shelves",
@@ -807,7 +908,9 @@ fullSizeImage: "",
     "category": "Greenhouse Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "complete-walk-in-greenhouse-w-shelves-pvc-cover-for-indoor-outdoor-use"
+    "shopifyTitle": "Complete  Walk-In Greenhouse W/ Shelves & PVC Cover for Indoor/Outdoor Use",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "21V Cordless Mini Electric Tiller",
@@ -817,7 +920,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "soil-loosening-machine-micro-tillage-machine-agricultural-soil-turning-machine-household-electric-hoe-excavator-for-farmland"
+    "shopifyTitle": "Soil Loosening Machine, Micro Tillage Machine, Agricultural Soil Turning Machine, Household Electric Hoe Excavator for Farmland",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "5-in-1 Garden Hand Tool Set",
@@ -827,7 +932,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "garden-shovel-hand-trowel-rake-cultivator-weeder-tools-bonsai-tool-planting-gardening-dig-vegetable-shovel-planting-hand-tools"
+    "shopifyTitle": "Garden Shovel Hand Trowel Rake Cultivator Weeder Tools Bonsai Tool Planting Gardening Dig Vegetable Shovel Planting Hand Tools",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "High-Carbon Steel Rake & Shovel",
@@ -837,7 +944,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "farm-tools-rake-scraper-rake-to-scrape-manure-and-remove-snow-rake-to-push-snow-shovel-to-rake"
+    "shopifyTitle": "Farm tools rake scraper rake to scrape manure and remove snow rake to push snow shovel to rake",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Manganese Steel Triangle Furrow Hoe",
@@ -847,7 +956,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "farm-tools-hoes-triangle-small-tip-hoe-agricultural-land-turning-loose-soil-hoe-hand-plow-manual-plough-rake-hoe-garden-tools"
+    "shopifyTitle": "Farm Tools Hoes Triangle Small Tip Hoe Agricultural Land Turning Loose Soil Hoe Hand Plow/Manual Plough Rake Hoe Garden Tools",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "DIY Rainproof Gravity Feeder Port",
@@ -857,7 +968,9 @@ fullSizeImage: "",
     "category": "Poultry Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "chicken-feeder-poultry-feeding-supplies-diy-rain-proof-poultry-feeder-port-gravity-feed-kit-for-buckets-barrels-bins-troughs"
+    "shopifyTitle": "Chicken Feeder Poultry Feeding Supplies DIY Rain Proof Poultry Feeder Port Gravity Feed Kit For Buckets Barrels Bins Troughs",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Automatic Free-Range Poultry Waterer",
@@ -867,7 +980,9 @@ fullSizeImage: "",
     "category": "Poultry Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "chicken-drinking-bowl-drinking-water-quail-poultry-automatic-water-dispenser-duck-and-pigeon-free-range-chicken"
+    "shopifyTitle": "Chicken Drinking Bowl Drinking Water Quail Poultry Automatic Water Dispenser Duck and Pigeon Free Range Chicken",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "21V Cordless Electric Pruning Shears",
@@ -877,7 +992,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "lyuwo-rechargeable-wireless-pruning-scissors-fruit-tree-potted-pruning-electric-tool-20v-brushless-30mm"
+    "shopifyTitle": "LYUWO Rechargeable Wireless Pruning Scissors, Fruit Tree Potted Pruning Electric Tool, 20V brushless, 30mm",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Clear Acrylic Automatic Bird Feeder",
@@ -887,7 +1004,9 @@ fullSizeImage: "",
     "category": "Poultry Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "birds-feeder-automatic-feeders-poultry-feeding-tool-food-container-storage-for-pigeon-parrot-chicken-pet-bird-feeding-device"
+    "shopifyTitle": "Birds Feeder Automatic Feeders Poultry Feeding Tool Food Container Storage For Pigeon Parrot Chicken Pet Bird Feeding Device",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Automatic 10-Egg Poultry Incubator",
@@ -897,7 +1016,9 @@ fullSizeImage: "",
     "category": "Incubators & Accessories",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "automatic-egg-incubator-chicken-incubator-automatic-egg-turner-fully-automatic-poultry-hatcher-machine-for-goose-quail-chicken"
+    "shopifyTitle": "Automatic Egg Incubator Chicken Incubator Automatic Egg Turner Fully Automatic Poultry Hatcher Machine for Goose Quail Chicken",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "DIY Farm Henhouse & Rabbit Nest Kit",
@@ -907,7 +1028,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "farm-henhouse-model-toy-diy-build-your-own-farm-childrens-puzzle-education-cute-animal-rabbit-nest-simulated-ranch-model-toy"
+    "shopifyTitle": "Farm Henhouse Model Toy DIY Build Your Own Farm Children's Puzzle Education Cute Animal Rabbit Nest Simulated Ranch Model Toy",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Forged Steel Triangle Furrow Hoe",
@@ -917,7 +1040,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "farm-tools-hoes-triangle-small-tip-hoe-plowing-hoe-agricultural-land-turning-loose-soil-hoe-for-household-vegetable-planting"
+    "shopifyTitle": "Farm Tools Hoes Triangle Small Tip Hoe Plowing Hoe Agricultural Land Turning Loose Soil Hoe for Household Vegetable Planting",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Hand-Forged Triangle Furrow Hoe",
@@ -927,7 +1052,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "farm-tools-hoes-household-vegetable-planting-triangle-furrow-hoe-small-tip-hoe-agricultural-land-turning-loose-soil-triangle-hoe"
+    "shopifyTitle": "Farm Tools Hoes Household Vegetable Planting Triangle Furrow Hoe Small Tip Hoe Agricultural Land Turning Loose Soil Triangle Hoe",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Programmable Chicken Coop Door",
@@ -937,7 +1064,9 @@ fullSizeImage: "",
     "category": "Smart & Sustainable Farming",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "automatic-door"
+    "shopifyTitle": "Automatic door",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Automatic Livestock Water Bowl",
@@ -947,7 +1076,9 @@ fullSizeImage: "",
     "category": "Livestock Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "automatic-water-drinking-bowl-farm-animals-water-feeder-cow-drinking-tool-for-sheep-goats-feeding-water-bowl-livestock-supplies"
+    "shopifyTitle": "Automatic Water Drinking Bowl Farm Animals Water Feeder Cow Drinking Tool for Sheep Goats Feeding Water Bowl Livestock Supplies",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "4-Egg Mini ABS Incubator",
@@ -957,7 +1088,9 @@ fullSizeImage: "",
     "category": "Incubators & Accessories",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "poultry-hatching-machine-abs-automatic-temperature-humidity-control-4-eggs-noiseless-egg-incubator-portable-for-school"
+    "shopifyTitle": "Poultry Hatching Machine ABS Automatic Temperature Humidity Control 4 Eggs Noiseless Egg Incubator Portable for School",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Electric Handheld Feather Plucker",
@@ -967,7 +1100,9 @@ fullSizeImage: "",
     "category": "Poultry Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "poultry-electric-feather-plucker-quick-chicken-plucker-efficient-feather-remover-duck-goose-farm-animal-hair-plucking-device"
+    "shopifyTitle": "Poultry Electric Feather Plucker Quick Chicken Plucker Efficient Feather Remover Duck Goose Farm Animal Hair Plucking Device",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "PTC Poultry Drinker Heating Plate",
@@ -977,7 +1112,9 @@ fullSizeImage: "",
     "category": "Poultry Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "poultry-drinking-heating-water-heater-agriculture-equipment-ptc-heater-220v-farm-drinker-for-bird-chickens-duck-bowls-drinker"
+    "shopifyTitle": "Poultry Drinking Heating Water Heater Agriculture Equipment Ptc Heater 220v Farm Drinker for bird Chickens Duck Bowls Drinker",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Automatic Feeder & Waterer Combo",
@@ -987,7 +1124,9 @@ fullSizeImage: "",
     "category": "Starter Kits & Bundles",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "poultry-automatic-feeding-bucket-chicken-feeder-barrel-water-bucket-geese-quail-drinking-farm-chicken-coop-water-supplies"
+    "shopifyTitle": "Poultry Automatic Feeding Bucket Chicken Feeder Barrel Water Bucket Geese Quail Drinking Farm Chicken Coop Water Supplies",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Electric 56-Egg Turning Tray",
@@ -997,7 +1136,9 @@ fullSizeImage: "",
     "category": "Incubators & Accessories",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "56-eggs-incubator-eggs-automatic-incubator-incubator-motor-turn-tray-poultry-incubation-equipment-farm-poultry-hatching-device"
+    "shopifyTitle": "56 Eggs Incubator Eggs Automatic Incubator Incubator motor Turn Tray Poultry Incubation Equipment Farm poultry Hatching device",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Anti-Peck Chicken Glasses (50pcs)",
@@ -1007,7 +1148,9 @@ fullSizeImage: "",
     "category": "Poultry Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "50pcs-poultry-chicken-glasses-anti-pecking-goggles-chicken-farm-anti-fighting-glasses-chicken-farming-essential-boltless-goggles"
+    "shopifyTitle": "50Pcs Poultry Chicken Glasses Anti-pecking Goggles Chicken Farm Anti-fighting Glasses Chicken Farming Essential Boltless Goggles",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "DIY Rainproof Feeder Ports (Set of 4)",
@@ -1017,7 +1160,9 @@ fullSizeImage: "",
     "category": "Poultry Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "4pc-chicken-feeder-poultry-feeding-supplies-diy-rain-proof-poultry-feeder-port-gravity-feed-kit-for-buckets-barrels-bins-troughs"
+    "shopifyTitle": "4pc Chicken Feeder Poultry Feeding Supplies DIY Rain Proof Poultry Feeder Port Gravity Feed Kit For Buckets Barrels Bins Troughs",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Smart 36-Egg Incubator",
@@ -1027,7 +1172,9 @@ fullSizeImage: "",
     "category": "Incubators & Accessories",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "36-small-household-eggs-incubators-brooder-fully-automatic-intelligent-chicken-duck-goose-pigeon-egg-incubator-poultry-farming"
+    "shopifyTitle": "36 Small Household Eggs Incubators Brooder Fully Automatic Intelligent Chicken Duck Goose Pigeon egg incubator Poultry Farming",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Infrared Poultry Heat Lamp",
@@ -1037,7 +1184,9 @@ fullSizeImage: "",
     "category": "Poultry Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "220v-poultry-heat-lamp-bulb-infrared-ray-thermal-preservation-heating-service-for-reptile-botany-amphibian-pet-livestock"
+    "shopifyTitle": "220V Poultry Heat Lamp Bulb Infrared Ray Thermal Preservation Heating Service For Reptile Botany Amphibian Pet Livestock",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Flip-Top Plastic Chicken Feeder",
@@ -1047,7 +1196,9 @@ fullSizeImage: "",
     "category": "Poultry Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "20-30cm-plastic-flip-top-poultry-bird-feeder-ground-chicken-feeder-trough-pheasant-feeding-bucket-quality-chick"
+    "shopifyTitle": "20/30cm Plastic Flip-Top Poultry Bird Feeder Ground Chicken Feeder Trough Pheasant feeding bucket Quality Chick",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Chick Drinking Bucket",
@@ -1057,7 +1208,9 @@ fullSizeImage: "",
     "category": "Poultry Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "1-pc-poultry-drinker-bottle-chick-drinking-bucket-chicken-water-feeder-bowls-bird-durable-waterer-chicken-coop-drinking-buckets"
+    "shopifyTitle": "1 Pc Poultry Drinker Bottle Chick Drinking Bucket Chicken Water Feeder Bowls Bird Durable Waterer Chicken Coop Drinking Buckets",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Automatic Poultry Water Jug",
@@ -1067,7 +1220,9 @@ fullSizeImage: "",
     "category": "Poultry Farming Supplies",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "1-pc-5l-poultry-automatic-drinking-bucket-goblet-feeder-barrel-water-bucket-quail-drinking-farm-chicken-coop-water-supply"
+    "shopifyTitle": "1 Pc 5L Poultry Automatic Drinking Bucket Goblet Feeder Barrel Water Bucket Quail Drinking Farm Chicken Coop Water Supply",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Multi-Teeth Weeding Tool",
@@ -1077,7 +1232,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "weeding-hoe-rake-4-7-9-12-teeth-farm-tool-weeding-scarifier-artifact-agricultural-nail-harrow-carbon-steel-gardening-weeding-too"
+    "shopifyTitle": "Weeding Hoe Rake 4/7/9/12 Teeth Farm Tool Weeding Scarifier Artifact Agricultural Nail Harrow Carbon Steel Gardening Weeding Too",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Triangle Hoe",
@@ -1087,7 +1244,9 @@ fullSizeImage: "",
     "category": "Farming Tools",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "triangle-small-tip-hoe-agricultural-land-turning-loose-soil-hoe-hand-plow-manual-plough-rake-hoe-garden-tools-ditch-weed"
+    "shopifyTitle": "Triangle Small Tip Hoe Agricultural Land Turning Loose Soil Hoe Hand Plow/Manual Plough Rake Hoe Garden Tools Ditch/Weed",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   },
   {
     "title": "Garden Shovel & Hand Tool Set",
@@ -1097,8 +1256,9 @@ fullSizeImage: "",
     "category": "Home Gardening & DIY Kits",
     "countryOfOrigin": "China",
     "checkoutType": "shopify",
-    "handle": "5m-telescopic-high-branch-manual-saws-cutter-single-double-hook-high-branch-saw-pruning-tools-fruit-trees-garden-hand-tool"
+    "shopifyTitle": "5M Telescopic High Branch Manual Saws Cutter Single/Double Hook High Branch Saw Pruning Tools Fruit Trees Garden Hand Tool",
+    "isBuyButtonEnabled": true,
+    "isVisible": true
   }
 
-
-];
+]
